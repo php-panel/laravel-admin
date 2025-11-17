@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Selectable;
+namespace Ladmin\Grid\Selectable;
 
-use Casbin\Admin\Grid\Displayers\AbstractDisplayer;
+use Ladmin\Grid\Displayers\AbstractDisplayer;
 
 class Radio extends AbstractDisplayer
 {

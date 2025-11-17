@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Simple;
+use Ladmin\Admin;
+use Ladmin\Grid\Simple;
 use Illuminate\Contracts\Support\Renderable;
 
 class Modal extends AbstractDisplayer
@@ -54,7 +54,7 @@ class Modal extends AbstractDisplayer
             'html'    => $html,
             'key'     => $this->getKey(),
             'value'   => $this->value,
-            'name'    => $this->getKey().'-'.str_replace('.', '_', $this->getColumn()->getName()),
+            'name'    => $this->getKey() . '-' . str_replace('.', '_', $this->getColumn()->getName()),
         ]);
     }
 }

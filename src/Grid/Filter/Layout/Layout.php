@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter\Layout;
+namespace Ladmin\Grid\Filter\Layout;
 
-use Casbin\Admin\Grid\Filter;
+use Ladmin\Grid\Filter;
 use Illuminate\Support\Collection;
 
 class Layout

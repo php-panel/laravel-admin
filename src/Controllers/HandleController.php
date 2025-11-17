@@ -1,12 +1,12 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
-use Casbin\Admin\Actions\Action;
-use Casbin\Admin\Actions\GridAction;
-use Casbin\Admin\Actions\Response;
-use Casbin\Admin\Actions\RowAction;
-use Casbin\Admin\Widgets\Form;
+use Ladmin\Actions\Action;
+use Ladmin\Actions\GridAction;
+use Ladmin\Actions\Response;
+use Ladmin\Actions\RowAction;
+use Ladmin\Widgets\Form;
 use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
@@ -158,7 +158,7 @@ class HandleController extends Controller
         $class = str_replace('_', '\\', $class);
 
         if (class_exists($class)) {
-            /** @var \Casbin\Admin\Grid\Selectable $selectable */
+            /** @var \Ladmin\Grid\Selectable $selectable */
             $selectable = new $class(...array_values($args));
 
             return $selectable->render();

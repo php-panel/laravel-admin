@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
 class Rate extends Text
 {

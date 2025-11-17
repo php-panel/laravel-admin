@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Middleware;
+namespace Ladmin\Middleware;
 
 use Closure;
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 
 class Authenticate
 {

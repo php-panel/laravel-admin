@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Layout;
+namespace Ladmin\Layout;
 
 use Closure;
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
 

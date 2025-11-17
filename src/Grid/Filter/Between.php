@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter;
+namespace Ladmin\Grid\Filter;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Support\Arr;
 
 class Between extends AbstractFilter

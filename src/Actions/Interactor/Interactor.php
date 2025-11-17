@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Actions\Interactor;
+namespace Ladmin\Actions\Interactor;
 
-use Casbin\Admin\Actions\Action;
+use Ladmin\Actions\Action;
 
 abstract class Interactor
 {
@@ -15,11 +15,34 @@ abstract class Interactor
      * @var array
      */
     public static $elements = [
-        'success', 'error', 'warning', 'info', 'question', 'confirm',
-        'text', 'email', 'integer', 'ip', 'url', 'password', 'mobile',
-        'textarea', 'select', 'multipleSelect', 'checkbox', 'radio',
-        'file', 'image', 'date', 'datetime', 'time', 'hidden', 'multipleImage',
-        'multipleFile', 'modalLarge', 'modalSmall',
+        'success',
+        'error',
+        'warning',
+        'info',
+        'question',
+        'confirm',
+        'text',
+        'email',
+        'integer',
+        'ip',
+        'url',
+        'password',
+        'mobile',
+        'textarea',
+        'select',
+        'multipleSelect',
+        'checkbox',
+        'radio',
+        'file',
+        'image',
+        'date',
+        'datetime',
+        'time',
+        'hidden',
+        'multipleImage',
+        'multipleFile',
+        'modalLarge',
+        'modalSmall',
     ];
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
 use Illuminate\Contracts\Support\Renderable;
 
@@ -169,10 +169,10 @@ SCRIPT;
         }
 
         $styles = array_map(function ($style) {
-            return 'box-'.$style;
+            return 'box-' . $style;
         }, $styles);
 
-        $this->class = $this->class.' '.implode(' ', $styles);
+        $this->class = $this->class . ' ' . implode(' ', $styles);
 
         return $this;
     }

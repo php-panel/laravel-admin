@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class Tab extends Widget implements Renderable

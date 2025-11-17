@@ -3,7 +3,7 @@
 namespace DummyNamespace;
 
 use App\Http\Controllers\Controller;
-use Casbin\Admin\Controllers\HasResourceActions;
+use Ladmin\Controllers\HasResourceActions;
 
 class DummyClass extends Controller
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
 use Closure;
-use Casbin\Admin\Grid;
+use Ladmin\Grid;
 
 trait HasActions
 {

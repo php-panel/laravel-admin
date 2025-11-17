@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Middleware;
+namespace Ladmin\Middleware;
 
-use Casbin\Admin\Auth\Permission as Checker;
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Auth\Permission as Checker;
+use Ladmin\Facades\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

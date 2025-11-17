@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,8 +25,14 @@ class ResourceGenerator
      */
     private $doctrineTypeMapping = [
         'string' => [
-            'enum', 'geometry', 'geometrycollection', 'linestring',
-            'polygon', 'multilinestring', 'multipoint', 'multipolygon',
+            'enum',
+            'geometry',
+            'geometrycollection',
+            'linestring',
+            'polygon',
+            'multilinestring',
+            'multipoint',
+            'multipolygon',
             'point',
         ],
     ];
@@ -219,7 +225,7 @@ class ResourceGenerator
             );
         }
 
-        $table = $this->model->getConnection()->getTablePrefix().$this->model->getTable();
+        $table = $this->model->getConnection()->getTablePrefix() . $this->model->getTable();
         /** @var \Doctrine\DBAL\Schema\MySqlSchemaManager $schema */
         $schema = $this->model->getConnection()->getDoctrineSchemaManager($table);
 

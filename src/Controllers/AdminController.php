@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
-use Casbin\Admin\Layout\Content;
+use Ladmin\Layout\Content;
 use Illuminate\Routing\Controller;
 
 class AdminController extends Controller

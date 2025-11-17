@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Auth\Database;
+namespace Ladmin\Auth\Database;
 
-use Casbin\Admin\Traits\DefaultDatetimeFormat;
+use Ladmin\Traits\DefaultDatetimeFormat;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 

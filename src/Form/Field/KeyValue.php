@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form\Field;
+use Ladmin\Admin;
+use Ladmin\Form\Field;
 use Illuminate\Support\Arr;
 
 class KeyValue extends Field

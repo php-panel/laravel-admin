@@ -1,12 +1,12 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Actions\RowAction;
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Actions\Delete;
-use Casbin\Admin\Grid\Actions\Edit;
-use Casbin\Admin\Grid\Actions\Show;
+use Ladmin\Actions\RowAction;
+use Ladmin\Admin;
+use Ladmin\Grid\Actions\Delete;
+use Ladmin\Grid\Actions\Edit;
+use Ladmin\Grid\Actions\Show;
 
 class DropdownActions extends Actions
 {

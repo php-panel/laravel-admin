@@ -1,16 +1,16 @@
 <?php
 
-namespace Casbin\Admin;
+namespace Ladmin;
 
 use Closure;
-use Casbin\Admin\Exception\Handler;
-use Casbin\Admin\Grid\Column;
-use Casbin\Admin\Grid\Concerns;
-use Casbin\Admin\Grid\Displayers;
-use Casbin\Admin\Grid\Model;
-use Casbin\Admin\Grid\Row;
-use Casbin\Admin\Grid\Tools;
-use Casbin\Admin\Traits\ShouldSnakeAttributes;
+use Ladmin\Exception\Handler;
+use Ladmin\Grid\Column;
+use Ladmin\Grid\Concerns;
+use Ladmin\Grid\Displayers;
+use Ladmin\Grid\Model;
+use Ladmin\Grid\Row;
+use Ladmin\Grid\Tools;
+use Ladmin\Traits\ShouldSnakeAttributes;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations;
 use Illuminate\Support\Collection;
@@ -37,13 +37,13 @@ class Grid
         Concerns\CanDoubleClick,
         ShouldSnakeAttributes,
         Macroable {
-            __call as macroCall;
-        }
+        __call as macroCall;
+    }
 
     /**
      * The grid data model instance.
      *
-     * @var \Casbin\Admin\Grid\Model|\Illuminate\Database\Eloquent\Builder
+     * @var \Ladmin\Grid\Model|\Illuminate\Database\Eloquent\Builder
      */
     protected $model;
 
@@ -351,7 +351,7 @@ class Grid
             return $this;
         }
 
-        $name = ($this->shouldSnakeAttributes() ? Str::snake($relation) : $relation).'.'.$column;
+        $name = ($this->shouldSnakeAttributes() ? Str::snake($relation) : $relation) . '.' . $column;
 
         $this->model()->with($relation);
 
@@ -628,7 +628,7 @@ class Grid
         return sprintf(
             '%s/create%s',
             $this->resource(),
-            $queryString ? ('?'.$queryString) : ''
+            $queryString ? ('?' . $queryString) : ''
         );
     }
 
@@ -753,7 +753,8 @@ class Grid
             return false;
         }
 
-        if ($relation instanceof Relations\HasOne ||
+        if (
+            $relation instanceof Relations\HasOne ||
             $relation instanceof Relations\BelongsTo ||
             $relation instanceof Relations\MorphOne
         ) {
@@ -764,7 +765,8 @@ class Grid
             );
         }
 
-        if ($relation instanceof Relations\HasMany
+        if (
+            $relation instanceof Relations\HasMany
             || $relation instanceof Relations\BelongsToMany
             || $relation instanceof Relations\MorphToMany
             || $relation instanceof Relations\HasManyThrough

@@ -1,12 +1,12 @@
 <?php
 
-namespace Casbin\Admin\Grid;
+namespace Ladmin\Grid;
 
-use Casbin\Admin\Actions\GridAction;
-use Casbin\Admin\Grid;
-use Casbin\Admin\Grid\Tools\AbstractTool;
-use Casbin\Admin\Grid\Tools\BatchActions;
-use Casbin\Admin\Grid\Tools\FilterButton;
+use Ladmin\Actions\GridAction;
+use Ladmin\Grid;
+use Ladmin\Grid\Tools\AbstractTool;
+use Ladmin\Grid\Tools\BatchActions;
+use Ladmin\Grid\Tools\FilterButton;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

@@ -2,10 +2,10 @@
 
 namespace DummyNamespace;
 
-use Casbin\Admin\Controllers\AdminController;
-use Casbin\Admin\Form;
-use Casbin\Admin\Grid;
-use Casbin\Admin\Show;
+use Ladmin\Controllers\AdminController;
+use Ladmin\Form;
+use Ladmin\Grid;
+use Ladmin\Show;
 
 class ExampleController extends AdminController
 {

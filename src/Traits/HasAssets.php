@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Traits;
+namespace Ladmin\Traits;
 
 trait HasAssets
 {

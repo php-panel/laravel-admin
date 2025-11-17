@@ -2,7 +2,7 @@
 
 namespace Tests\Models;
 
-use Casbin\Admin\Traits\ModelTree;
+use Ladmin\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 
 class Tree extends Model

@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Column;
+namespace Ladmin\Grid\Column;
 
-use Casbin\Admin\Grid\Column;
-use Casbin\Admin\Grid\Model;
+use Ladmin\Grid\Column;
+use Ladmin\Grid\Model;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 

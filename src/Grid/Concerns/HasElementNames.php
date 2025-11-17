@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
 trait HasElementNames
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Administrator;
 
 class UsersTest extends TestCase
 {
@@ -63,7 +63,7 @@ class UsersTest extends TestCase
 
     public function testUpdateUser()
     {
-        $this->visit('admin/auth/users/'.$this->user->id.'/edit')
+        $this->visit('admin/auth/users/' . $this->user->id . '/edit')
             ->see('Create')
             ->submitForm('Submit', ['name' => 'test', 'roles' => [1]])
             ->seePageIs('admin/auth/users')
@@ -80,7 +80,7 @@ class UsersTest extends TestCase
             'roles'                 => [1],
         ];
 
-        $this->visit('admin/auth/users/'.$this->user->id.'/edit')
+        $this->visit('admin/auth/users/' . $this->user->id . '/edit')
             ->see('Create')
             ->submitForm('Submit', $data)
             ->seePageIs('admin/auth/users')

@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 use Illuminate\Console\Command;
 
@@ -28,7 +28,7 @@ class PublishCommand extends Command
     public function handle()
     {
         $force = $this->option('force');
-        $options = ['--provider' => 'Casbin\Admin\AdminServiceProvider'];
+        $options = ['--provider' => 'Ladmin\AdminServiceProvider'];
         if ($force == true) {
             $options['--force'] = true;
         }

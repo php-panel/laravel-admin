@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin;
+namespace Ladmin;
 
-use Casbin\Admin\Layout\Content;
+use Ladmin\Layout\Content;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Blade;
@@ -72,7 +72,7 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'admin');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'admin');
 
         $this->ensureHttps();
 
@@ -85,7 +85,7 @@ class AdminServiceProvider extends ServiceProvider
         $this->compatibleBlade();
 
         Blade::directive('box', function ($title) {
-            return "<?php \$box = new \Casbin\Admin\Widgets\Box({$title}, '";
+            return "<?php \$box = new \Ladmin\Widgets\Box({$title}, '";
         });
 
         Blade::directive('endbox', function ($expression) {
@@ -100,7 +100,7 @@ class AdminServiceProvider extends ServiceProvider
      */
     protected function ensureHttps()
     {
-        $is_admin = Str::startsWith(request()->getRequestUri(), '/'.ltrim(config('admin.route.prefix'), '/'));
+        $is_admin = Str::startsWith(request()->getRequestUri(), '/' . ltrim(config('admin.route.prefix'), '/'));
         if ((config('admin.https') || config('admin.secure')) && $is_admin) {
             url()->forceScheme('https');
             $this->app['request']->server->set('HTTPS', true);
@@ -115,14 +115,14 @@ class AdminServiceProvider extends ServiceProvider
     protected function registerPublishing()
     {
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config' => config_path()], 'laravel-admin-config');
+            $this->publishes([__DIR__ . '/../config' => config_path()], 'laravel-admin-config');
             if (version_compare($this->app->version(), '9.0.0', '>=')) {
-                $this->publishes([__DIR__.'/../resources/lang' => base_path('lang')], 'laravel-admin-lang');
+                $this->publishes([__DIR__ . '/../resources/lang' => base_path('lang')], 'laravel-admin-lang');
             } else {
-                $this->publishes([__DIR__.'/../resources/lang' => resource_path('lang')], 'laravel-admin-lang');
+                $this->publishes([__DIR__ . '/../resources/lang' => resource_path('lang')], 'laravel-admin-lang');
             }
-            $this->publishes([__DIR__.'/../database/migrations' => database_path('migrations')], 'laravel-admin-migrations');
-            $this->publishes([__DIR__.'/../resources/assets' => public_path('vendor/laravel-admin')], 'laravel-admin-assets');
+            $this->publishes([__DIR__ . '/../database/migrations' => database_path('migrations')], 'laravel-admin-migrations');
+            $this->publishes([__DIR__ . '/../resources/assets' => public_path('vendor/laravel-admin')], 'laravel-admin-assets');
         }
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Exception;
+namespace Ladmin\Exception;
 
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\ViewErrorBag;

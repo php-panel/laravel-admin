@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid;
+namespace Ladmin\Grid;
 
 use Closure;
 use Illuminate\Contracts\Support\Htmlable;

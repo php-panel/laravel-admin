@@ -2,9 +2,9 @@
 
 namespace Tests\Controllers;
 
-use Casbin\Admin\Controllers\AdminController;
-use Casbin\Admin\Form;
-use Casbin\Admin\Grid;
+use Ladmin\Controllers\AdminController;
+use Ladmin\Form;
+use Ladmin\Grid;
 use Tests\Models\Tag;
 use Tests\Models\User;
 
@@ -39,11 +39,11 @@ class UserController extends AdminController
         $grid->column('data->json->field', 'Json Field');
 
         $grid->column('column1_not_in_table')->display(function () {
-            return 'full name:'.$this->full_name;
+            return 'full name:' . $this->full_name;
         });
 
         $grid->column('column2_not_in_table')->display(function () {
-            return $this->email.'#'.$this->profile['color'];
+            return $this->email . '#' . $this->profile['color'];
         });
 
         $grid->tags()->display(function ($tags) {

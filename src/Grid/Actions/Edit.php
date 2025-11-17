@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Actions;
+namespace Ladmin\Grid\Actions;
 
-use Casbin\Admin\Actions\RowAction;
+use Ladmin\Actions\RowAction;
 
 class Edit extends RowAction
 {

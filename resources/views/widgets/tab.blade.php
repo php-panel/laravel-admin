@@ -2,11 +2,11 @@
     <ul class="nav nav-tabs nav-tabs">
 
         @foreach($tabs as $id => $tab)
-            @if($tab['type'] == \Casbin\Admin\Widgets\Tab::TYPE_CONTENT)
-                <li {{ $id == $active ? 'class=active' : '' }}><a href="#tab_{{ $tab['id'] }}" data-toggle="tab">{{ $tab['title'] }}</a></li>
-            @elseif($tab['type'] == \Casbin\Admin\Widgets\Tab::TYPE_LINK)
-                <li {{ $id == $active ? 'class=active' : '' }}><a href="{{ $tab['href'] }}">{{ $tab['title'] }}</a></li>
-            @endif
+        @if($tab['type'] == \Ladmin\Widgets\Tab::TYPE_CONTENT)
+        <li {{ $id == $active ? 'class=active' : '' }}><a href="#tab_{{ $tab['id'] }}" data-toggle="tab">{{ $tab['title'] }}</a></li>
+        @elseif($tab['type'] == \Ladmin\Widgets\Tab::TYPE_LINK)
+        <li {{ $id == $active ? 'class=active' : '' }}><a href="{{ $tab['href'] }}">{{ $tab['title'] }}</a></li>
+        @endif
         @endforeach
 
         @if (!empty($dropDown))
@@ -27,11 +27,11 @@
         @foreach($tabs as $id => $tab)
         <div class="tab-pane {{ $id == $active ? 'active' : '' }}" id="tab_{{ $tab['id'] }}">
             @php($content = \Illuminate\Support\Arr::get($tab, 'content'))
-                @if($content instanceof \Illuminate\Contracts\Support\Renderable)
-                    {!! $content->render() !!}
-                @else
-                    {!! $content !!}
-                @endif
+            @if($content instanceof \Illuminate\Contracts\Support\Renderable)
+            {!! $content->render() !!}
+            @else
+            {!! $content !!}
+            @endif
         </div>
         @endforeach
 

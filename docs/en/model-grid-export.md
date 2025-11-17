@@ -19,7 +19,7 @@ And then create a new custom export class, such as `app/Admin/Extensions/ExcelEx
 
 namespace App\Admin\Extensions;
 
-use Casbin\Admin\Grid\Exporters\AbstractExporter;
+use Ladmin\Grid\Exporters\AbstractExporter;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Arr;
 

@@ -1,6 +1,6 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Administrator;
 use Illuminate\Support\Facades\File;
 
 class UserSettingTest extends TestCase

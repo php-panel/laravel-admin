@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Column;
+namespace Ladmin\Grid\Column;
 
 use Illuminate\Contracts\Support\Renderable;
 

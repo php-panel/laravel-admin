@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Auth\Database;
+namespace Ladmin\Auth\Database;
 
-use Casbin\Admin\Traits\DefaultDatetimeFormat;
+use Ladmin\Traits\DefaultDatetimeFormat;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -20,8 +20,17 @@ class OperationLog extends Model
     ];
 
     public static $methods = [
-        'GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH',
-        'LINK', 'UNLINK', 'COPY', 'HEAD', 'PURGE',
+        'GET',
+        'POST',
+        'PUT',
+        'DELETE',
+        'OPTIONS',
+        'PATCH',
+        'LINK',
+        'UNLINK',
+        'COPY',
+        'HEAD',
+        'PURGE',
     ];
 
     /**

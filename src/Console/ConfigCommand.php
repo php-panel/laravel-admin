@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
@@ -29,7 +29,7 @@ class ConfigCommand extends Command
         $path = $this->argument('path') ?: 'config/admin.php';
 
         $current = require $path;
-        $original = require __DIR__.'/../../config/admin.php';
+        $original = require __DIR__ . '/../../config/admin.php';
 
         $added = $this->diff($current, $original);
         $removed = $this->diff($original, $current);

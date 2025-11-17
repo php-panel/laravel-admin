@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Layout;
+namespace Ladmin\Layout;
 
 interface Buildable
 {

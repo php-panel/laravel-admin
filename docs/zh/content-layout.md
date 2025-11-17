@@ -2,7 +2,7 @@
 
 `laravel-admin`的布局可参考后台首页的布局文件[HomeController.php](https://github.com/z-song/laravel-admin/blob/master/src/Console/stubs/HomeController.stub)的`index()`方法。
 
-`Casbin\Admin\Layout\Content`类用来实现内容区的布局。`Content::body($content)`方法用来添加页面内容：
+`Ladmin\Layout\Content`类用来实现内容区的布局。`Content::body($content)`方法用来添加页面内容：
 
 一个简单的后台页面代码如下：
 

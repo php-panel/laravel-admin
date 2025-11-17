@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
-use Casbin\Admin\Widgets\Navbar\RefreshButton;
+use Ladmin\Widgets\Navbar\RefreshButton;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 

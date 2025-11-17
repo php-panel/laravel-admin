@@ -1,18 +1,18 @@
 {
-    "name": "casbin/laravel-admin",
+    "name": "php-panel/laravel-admin",
     "description": "laravel admin",
     "type": "library",
     "keywords": [
         "laravel",
         "admin",
-        "casbin",
         "permission",
         "rbac",
         "access control",
         "grid",
-        "form"
+        "form",
+        "php-panel"
     ],
-    "homepage": "https://github.com/php-casbin/laravel-admin",
+    "homepage": "https://github.com/php-panel/laravel-admin",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Casbin\\Admin\\": "src/"
+            "Ladmin\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -51,7 +51,7 @@
         ]
     },
     "scripts": {
-        "test": "./vendor/bin/phpunit"
+        "test": "XDEBUG_MODE=coverage ./vendor/bin/phpunit"
     },
     "suggest": {
         "intervention/image": "Required to handling and manipulation upload images (~2.3).",
@@ -60,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Casbin\\Admin\\AdminServiceProvider"
+                "Ladmin\\AdminServiceProvider"
             ],
             "aliases": {
-                "Admin": "Casbin\\Admin\\Facades\\Admin"
+                "Admin": "Ladmin\\Facades\\Admin"
             }
         }
     }

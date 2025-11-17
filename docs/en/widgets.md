@@ -2,10 +2,10 @@
 
 ## Box
 
-`Casbin\Admin\Widgets\Box` used to generate box components:
+`Ladmin\Widgets\Box` used to generate box components:
 
 ```php
-use Casbin\Admin\Widgets\Box;
+use Ladmin\Widgets\Box;
 
 $box = new Box('Box Title', 'Box content');
 
@@ -37,9 +37,9 @@ The `$content` parameter is the content element of the Box, which can be either 
 
 ## Collapse
 
-`Casbin\Admin\Widgets\Collapse` class used to generate folding components:
+`Ladmin\Widgets\Collapse` class used to generate folding components:
 ```php
-use Casbin\Admin\Widgets\Collapse;
+use Ladmin\Widgets\Collapse;
 
 $collapse = new Collapse();
 
@@ -55,7 +55,7 @@ echo $collapse->render();
 
 ## Form
 
-`Casbin\Admin\Widgets\Form` class is used to quickly build a form:
+`Ladmin\Widgets\Form` class is used to quickly build a form:
 
 ```php
 
@@ -86,10 +86,10 @@ echo $form->render();
 
 ## Infobox
 
-`Casbin\Admin\Widgets\InfoBox` class is used to generate the information presentation block:
+`Ladmin\Widgets\InfoBox` class is used to generate the information presentation block:
 
 ```php
-use Casbin\Admin\Widgets\InfoBox;
+use Ladmin\Widgets\InfoBox;
 
 $infoBox = new InfoBox('New Users', 'users', 'aqua', '/admin/users', '1024');
 
@@ -101,10 +101,10 @@ Refer to the section on the `InfoBox` in the `index()` method of the home page l
 
 ## Tab component
 
-`Casbin\Admin\Widgets\Tab` class is used to generate the tab components:
+`Ladmin\Widgets\Tab` class is used to generate the tab components:
 
 ```php
-use Casbin\Admin\Widgets\Tab;
+use Ladmin\Widgets\Tab;
 
 $tab = new Tab();
 
@@ -120,10 +120,10 @@ echo $tab->render();
 
 ## Table
 
-`Casbin\Admin\Widgets\Table` class is used to generate tables:
+`Ladmin\Widgets\Table` class is used to generate tables:
 
 ```php
-use Casbin\Admin\Widgets\Table;
+use Ladmin\Widgets\Table;
 
 // table 1
 $headers = ['Id', 'Email', 'Name', 'Company'];

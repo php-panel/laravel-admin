@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 
 class Text extends Field
 {
@@ -43,13 +43,13 @@ class Text extends Field
         $this->initPlainInput();
 
         if (!$this->withoutIcon) {
-            $this->prepend('<i class="fa '.$this->icon.' fa-fw"></i>');
+            $this->prepend('<i class="fa ' . $this->icon . ' fa-fw"></i>');
         }
         $this->defaultAttribute('type', 'text')
             ->defaultAttribute('id', $this->id)
             ->defaultAttribute('name', $this->elementName ?: $this->formatName($this->column))
             ->defaultAttribute('value', old($this->elementName ?: $this->column, $this->value()))
-            ->defaultAttribute('class', 'form-control '.$this->getElementClassString())
+            ->defaultAttribute('class', 'form-control ' . $this->getElementClassString())
             ->defaultAttribute('placeholder', $this->getPlaceholder())
             ->mountPicker()
             ->addVariables([

@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Actions;
+namespace Ladmin\Actions;
 
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 

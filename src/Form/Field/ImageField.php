@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
 use Illuminate\Support\Str;
 use Intervention\Image\Constraint;
@@ -159,10 +159,10 @@ trait ImageField
         $ext = @pathinfo($original, PATHINFO_EXTENSION);
 
         // We remove extension from file name so we can append thumbnail type
-        $path = @Str::replaceLast('.'.$ext, '', $original);
+        $path = @Str::replaceLast('.' . $ext, '', $original);
 
         // We merge original name + thumbnail name + extension
-        $path = $path.'-'.$name.'.'.$ext;
+        $path = $path . '-' . $name . '.' . $ext;
 
         if ($this->storage->exists($path)) {
             $this->storage->delete($path);
@@ -183,10 +183,10 @@ trait ImageField
             $ext = pathinfo($this->name, PATHINFO_EXTENSION);
 
             // We remove extension from file name so we can append thumbnail type
-            $path = Str::replaceLast('.'.$ext, '', $this->name);
+            $path = Str::replaceLast('.' . $ext, '', $this->name);
 
             // We merge original name + thumbnail name + extension
-            $path = $path.'-'.$name.'.'.$ext;
+            $path = $path . '-' . $name . '.' . $ext;
 
             /** @var \Intervention\Image\Image $image */
             $image = InterventionImage::make($file);

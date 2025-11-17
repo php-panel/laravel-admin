@@ -14,20 +14,20 @@
 </p>
 
 <div align="center">
-    <a href="https://github.com/php-casbin/laravel-admin/actions">
-        <img src="https://github.com/php-casbin/laravel-admin/actions/workflows/phpunit.yml/badge.svg" alt="PHPUnit Status">
+    <a href="https://github.com/php-panel/laravel-admin/actions">
+        <img src="https://github.com/php-panel/laravel-admin/actions/workflows/phpunit.yml/badge.svg" alt="PHPUnit Status">
     </a>
-    <a href="https://coveralls.io/github/php-casbin/laravel-admin">
-        <img src="https://coveralls.io/repos/github/php-casbin/laravel-admin/badge.svg" alt="Coverage Status">
+    <a href="https://coveralls.io/github/php-panel/laravel-admin">
+        <img src="https://coveralls.io/repos/github/php-panel/laravel-admin/badge.svg" alt="Coverage Status">
     </a>
-    <a href="https://packagist.org/packages/casbin/laravel-admin">
-        <img src="https://poser.pugx.org/casbin/laravel-admin/v/stable" alt="Latest Stable Version">
+    <a href="https://packagist.org/packages/php-panel/laravel-admin">
+        <img src="https://poser.pugx.org/php-panel/laravel-admin/v/stable" alt="Latest Stable Version">
     </a>
-     <a href="https://packagist.org/packages/casbin/laravel-admin">
-        <img src="https://poser.pugx.org/casbin/laravel-admin/downloads" alt="Total Downloads">
+     <a href="https://packagist.org/packages/php-panel/laravel-admin">
+        <img src="https://poser.pugx.org/php-panel/laravel-admin/downloads" alt="Total Downloads">
     </a>
-    <a href="https://packagist.org/packages/casbin/laravel-admin">
-        <img src="https://poser.pugx.org/casbin/laravel-admin/license" alt="License">
+    <a href="https://packagist.org/packages/php-panel/laravel-admin">
+        <img src="https://poser.pugx.org/php-panel/laravel-admin/license" alt="License">
     </a>
 </div>
 
@@ -43,13 +43,13 @@ Installation
 First, install laravel, and make sure that the database connection settings are correct.
 
 ```
-composer require casbin/laravel-admin
+composer require php-panel/laravel-admin
 ```
 
 Then run these commands to publish assets and config：
 
 ```
-php artisan vendor:publish --provider="Casbin\Admin\AdminServiceProvider"
+php artisan vendor:publish --provider="Ladmin\AdminServiceProvider"
 ```
 After run command you can find config file in `config/admin.php`, in this file you can change the install directory, db connection or table names.
 
@@ -66,7 +66,7 @@ The file `config/admin.php` contains an array of configurations, you can find th
 
 Right to left support
 ------------
-just go to this path `<YOUR_PROJECT_PATH>\vendor\casbin\laravel-admin\src\Traits\HasAssets.php` and modify `$baseCss` array for loading right to left (rtl) version of bootstap and AdminLTE css files.    
+just go to this path `<YOUR_PROJECT_PATH>\vendor\php-panel\laravel-admin\src\Traits\HasAssets.php` and modify `$baseCss` array for loading right to left (rtl) version of bootstap and AdminLTE css files.    
 **bootstrap.min.css** change it to **bootstrap.rtl.min.css**    
 **AdminLTE.min.css** change it to **AdminLTE.rtl.min.css**  
 

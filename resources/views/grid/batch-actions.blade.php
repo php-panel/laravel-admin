@@ -8,11 +8,11 @@
     @if(!$actions->isEmpty())
     <ul class="dropdown-menu" role="menu">
         @foreach($actions as $action)
-            @if($action instanceof \Casbin\Admin\Actions\BatchAction)
-                <li>{!! $action->render() !!}</li>
-            @else
-                <li><a href="#" class="{{ $action->getElementClass(false) }}">{!! $action->render() !!} </a></li>
-            @endif
+        @if($action instanceof \Ladmin\Actions\BatchAction)
+        <li>{!! $action->render() !!}</li>
+        @else
+        <li><a href="#" class="{{ $action->getElementClass(false) }}">{!! $action->render() !!} </a></li>
+        @endif
         @endforeach
     </ul>
     @endif
@@ -20,33 +20,35 @@
 @endif
 
 <script>
-$('.{{ $all }}').iCheck({checkboxClass:'icheckbox_minimal-blue'});
+    $('.{{ $all }}').iCheck({
+        checkboxClass: 'icheckbox_minimal-blue'
+    });
 
-$('.{{ $all }}').on('ifChanged', function(event) {
-    if (this.checked) {
-        $('.{{ $row }}-checkbox').iCheck('check');
-    } else {
-        $('.{{ $row }}-checkbox').iCheck('uncheck');
-    }
-}).on('ifClicked', function () {
-    if (this.checked) {
-        $.admin.grid.selects = {};
-    } else {
-        $('.{{ $row }}-checkbox').each(function () {
-            var id = $(this).data('id');
-            $.admin.grid.select(id);
-        });
-    }
+    $('.{{ $all }}').on('ifChanged', function(event) {
+        if (this.checked) {
+            $('.{{ $row }}-checkbox').iCheck('check');
+        } else {
+            $('.{{ $row }}-checkbox').iCheck('uncheck');
+        }
+    }).on('ifClicked', function() {
+        if (this.checked) {
+            $.admin.grid.selects = {};
+        } else {
+            $('.{{ $row }}-checkbox').each(function() {
+                var id = $(this).data('id');
+                $.admin.grid.select(id);
+            });
+        }
 
-    var selected = $.admin.grid.selected().length;
+        var selected = $.admin.grid.selected().length;
 
-    if (selected > 0) {
-        $('.{{ $all }}-btn').show();
-    } else {
-        $('.{{ $all }}-btn').hide();
-    }
+        if (selected > 0) {
+            $('.{{ $all }}-btn').show();
+        } else {
+            $('.{{ $all }}-btn').hide();
+        }
 
-    $('.{{ $all }}-btn .selected')
-        .html("{{ trans('admin.grid_items_selected') }}".replace('{n}', selected));
-});
+        $('.{{ $all }}-btn .selected')
+            .html("{{ trans('admin.grid_items_selected') }}".replace('{n}', selected));
+    });
 </script>

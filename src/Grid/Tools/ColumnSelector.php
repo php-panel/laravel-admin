@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid;
+use Ladmin\Admin;
+use Ladmin\Grid;
 use Illuminate\Support\Collection;
 
 class ColumnSelector extends AbstractTool

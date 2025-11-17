@@ -1,6 +1,6 @@
 # 基于数据模型的表格
 
-`Casbin\Admin\Grid`类用于生成基于数据模型的表格，先来个例子，数据库中有`movies`表
+`Ladmin\Grid`类用于生成基于数据模型的表格，先来个例子，数据库中有`movies`表
 
 ```sql
 CREATE TABLE `movies` (
@@ -23,8 +23,8 @@ CREATE TABLE `movies` (
 ```php
 
 use App\Models\Movie;
-use Casbin\Admin\Grid;
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Grid;
+use Ladmin\Facades\Admin;
 
 $grid = Admin::grid(Movie::class, function(Grid $grid){
 

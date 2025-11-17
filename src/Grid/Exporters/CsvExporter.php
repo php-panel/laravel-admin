@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Exporters;
+namespace Ladmin\Grid\Exporters;
 
-use Casbin\Admin\Grid\Column;
+use Ladmin\Grid\Column;
 
 class CsvExporter extends AbstractExporter
 {
@@ -160,7 +160,7 @@ class CsvExporter extends AbstractExporter
         $response = function () {
             $handle = fopen('php://output', 'w');
             $titles = [];
-            fwrite($handle, chr(0xEF).chr(0xBB).chr(0xBF)); //导出的CSV文件是无BOM编码UTF-8，而我们通常使用UTF-8编码格式都是有BOM的。所以添加BOM于CSV中
+            fwrite($handle, chr(0xEF) . chr(0xBB) . chr(0xBF)); //导出的CSV文件是无BOM编码UTF-8，而我们通常使用UTF-8编码格式都是有BOM的。所以添加BOM于CSV中
             $this->chunk(function ($collection) use ($handle, &$titles) {
                 Column::setOriginalGridModels($collection);
 
@@ -248,8 +248,10 @@ class CsvExporter extends AbstractExporter
      */
     protected function getColumnValue(string $column, $value, $original)
     {
-        if (!empty($this->columnUseOriginalValue)
-            && in_array($column, $this->columnUseOriginalValue)) {
+        if (
+            !empty($this->columnUseOriginalValue)
+            && in_array($column, $this->columnUseOriginalValue)
+        ) {
             return $original;
         }
 

@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Casbin\Admin\Controllers\AuthController as BaseAuthController;
+use Ladmin\Controllers\AuthController as BaseAuthController;
 
 class AuthController extends BaseAuthController
 {

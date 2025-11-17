@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Auth\Database;
+namespace Ladmin\Auth\Database;
 
-use Casbin\Admin\Traits\DefaultDatetimeFormat;
+use Ladmin\Traits\DefaultDatetimeFormat;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Http\Request;
@@ -21,7 +21,13 @@ class Permission extends Model
      * @var array
      */
     public static $httpMethods = [
-        'GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS', 'HEAD',
+        'GET',
+        'POST',
+        'PUT',
+        'DELETE',
+        'PATCH',
+        'OPTIONS',
+        'HEAD',
     ];
 
     /**
@@ -70,7 +76,7 @@ class Permission extends Model
         $method = $this->http_method;
 
         $matches = array_map(function ($path) use ($method) {
-            $path = trim(config('admin.route.prefix'), '/').$path;
+            $path = trim(config('admin.route.prefix'), '/') . $path;
 
             if (Str::contains($path, ':')) {
                 list($method, $path) = explode(':', $path);

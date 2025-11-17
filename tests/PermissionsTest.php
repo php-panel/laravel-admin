@@ -1,8 +1,8 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
-use Casbin\Admin\Auth\Database\Permission;
-use Casbin\Admin\Auth\Database\Role;
+use Ladmin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Permission;
+use Ladmin\Auth\Database\Role;
 
 class PermissionsTest extends TestCase
 {

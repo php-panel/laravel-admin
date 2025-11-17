@@ -1,11 +1,11 @@
 <?php
 
-namespace Casbin\Admin\Grid;
+namespace Ladmin\Grid;
 
 use Closure;
-use Casbin\Admin\Actions\RowAction;
-use Casbin\Admin\Grid;
-use Casbin\Admin\Grid\Displayers\AbstractDisplayer;
+use Ladmin\Actions\RowAction;
+use Ladmin\Grid;
+use Ladmin\Grid\Displayers\AbstractDisplayer;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model as BaseModel;
 use Illuminate\Support\Arr;
@@ -474,7 +474,7 @@ class Column
     public function action($action)
     {
         if (!is_subclass_of($action, RowAction::class)) {
-            throw new \InvalidArgumentException("Action class [$action] must be sub-class of [Casbin\Admin\Actions\GridAction]");
+            throw new \InvalidArgumentException("Action class [$action] must be sub-class of [Ladmin\Actions\GridAction]");
         }
 
         $grid = $this->grid;

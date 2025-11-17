@@ -1,6 +1,6 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Administrator;
 use Illuminate\Support\Facades\File;
 use Tests\Models\File as FileModel;
 
@@ -24,7 +24,7 @@ class FileUploadTest extends TestCase
             ->seeElement('input[name=file4]')
             ->seeElement('input[name=file5]')
             ->seeElement('input[name=file6]')
-//            ->seeInElement('a[href="/admin/files"]', 'List')
+            //            ->seeInElement('a[href="/admin/files"]', 'List')
             ->seeInElement('button[type=reset]', 'Reset')
             ->seeInElement('button[type=submit]', 'Submit');
     }
@@ -32,12 +32,12 @@ class FileUploadTest extends TestCase
     protected function uploadFiles()
     {
         return $this->visit('admin/files/create')
-            ->attach(__DIR__.'/AuthTest.php', 'file1')
-            ->attach(__DIR__.'/InstallTest.php', 'file2')
-            ->attach(__DIR__.'/IndexTest.php', 'file3')
-            ->attach(__DIR__.'/LaravelTest.php', 'file4')
-            ->attach(__DIR__.'/routes.php', 'file5')
-            ->attach(__DIR__.'/migrations/2016_11_22_093148_create_test_tables.php', 'file6')
+            ->attach(__DIR__ . '/AuthTest.php', 'file1')
+            ->attach(__DIR__ . '/InstallTest.php', 'file2')
+            ->attach(__DIR__ . '/IndexTest.php', 'file3')
+            ->attach(__DIR__ . '/LaravelTest.php', 'file4')
+            ->attach(__DIR__ . '/routes.php', 'file5')
+            ->attach(__DIR__ . '/migrations/2016_11_22_093148_create_test_tables.php', 'file6')
             ->press('Submit');
     }
 
@@ -64,7 +64,7 @@ class FileUploadTest extends TestCase
         $files = FileModel::first()->toArray();
 
         foreach (range(1, 6) as $index) {
-            $this->assertFileExists(public_path('uploads/'.$files['file'.$index]));
+            $this->assertFileExists(public_path('uploads/' . $files['file' . $index]));
         }
 
         File::cleanDirectory(public_path('uploads/files'));
@@ -88,13 +88,13 @@ class FileUploadTest extends TestCase
             ->seeElement('input[name=file4]')
             ->seeElement('input[name=file5]')
             ->seeElement('input[name=file6]')
-//            ->seeInElement('a[href="/admin/files"]', 'List')
+            //            ->seeInElement('a[href="/admin/files"]', 'List')
             ->seeInElement('button[type=reset]', 'Reset')
             ->seeInElement('button[type=submit]', 'Submit');
 
-        $this->attach(__DIR__.'/RolesTest.php', 'file3')
-            ->attach(__DIR__.'/MenuTest.php', 'file4')
-            ->attach(__DIR__.'/TestCase.php', 'file5')
+        $this->attach(__DIR__ . '/RolesTest.php', 'file3')
+            ->attach(__DIR__ . '/MenuTest.php', 'file4')
+            ->attach(__DIR__ . '/TestCase.php', 'file5')
             ->press('Submit');
 
         $new = FileModel::first();
@@ -126,7 +126,7 @@ class FileUploadTest extends TestCase
             ->dontSeeInDatabase('test_files', ['id' => 1]);
 
         foreach (range(1, 6) as $index) {
-            $this->assertFileDoesNotExist(public_path('uploads/'.$files['file'.$index]));
+            $this->assertFileDoesNotExist(public_path('uploads/' . $files['file' . $index]));
         }
 
         $this->visit('admin/files')

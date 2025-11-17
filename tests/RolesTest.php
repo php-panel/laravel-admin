@@ -1,7 +1,7 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
-use Casbin\Admin\Auth\Database\Role;
+use Ladmin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Role;
 
 class RolesTest extends TestCase
 {

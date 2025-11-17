@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
 use Illuminate\Support\Fluent;
 
@@ -41,7 +41,7 @@ abstract class Widget extends Fluent
             }
         }
 
-        return count($html) > 0 ? ' '.implode(' ', $html) : '';
+        return count($html) > 0 ? ' ' . implode(' ', $html) : '';
     }
 
     /**
@@ -58,7 +58,7 @@ abstract class Widget extends Fluent
             $key = $value;
         }
         if (!is_null($value)) {
-            return $key.'="'.htmlentities($value, ENT_QUOTES, 'UTF-8').'"';
+            return $key . '="' . htmlentities($value, ENT_QUOTES, 'UTF-8') . '"';
         }
     }
 

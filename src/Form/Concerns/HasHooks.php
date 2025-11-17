@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Form\Concerns;
+namespace Ladmin\Form\Concerns;
 
 use Closure;
 use Illuminate\Support\Arr;

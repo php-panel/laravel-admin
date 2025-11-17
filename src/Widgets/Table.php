@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
@@ -40,7 +40,7 @@ class Table extends Widget implements Renderable
         $this->setRows($rows);
         $this->setStyle($style);
 
-        $this->class('table '.implode(' ', $this->style));
+        $this->class('table ' . implode(' ', $this->style));
     }
 
     /**

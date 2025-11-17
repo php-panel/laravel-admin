@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Simple;
+use Ladmin\Admin;
+use Ladmin\Grid\Simple;
 use Illuminate\Contracts\Support\Renderable;
 
 class Expand extends AbstractDisplayer
@@ -27,7 +27,7 @@ class Expand extends AbstractDisplayer
         return Admin::component('admin::components.column-expand', [
             'key'           => $this->getKey(),
             'url'           => $this->getLoadUrl(),
-            'name'          => str_replace('.', '-', $this->getName()).'-'.$this->getKey(),
+            'name'          => str_replace('.', '-', $this->getName()) . '-' . $this->getKey(),
             'html'          => $html,
             'value'         => $this->value,
             'async'         => $async,

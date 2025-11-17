@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;

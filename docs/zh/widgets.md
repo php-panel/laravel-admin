@@ -2,10 +2,10 @@
 
 ## Box组件
 
-`Casbin\Admin\Widgets\Box`用来生成box组件：
+`Ladmin\Widgets\Box`用来生成box组件：
 
 ```php
-use Casbin\Admin\Widgets\Box;
+use Ladmin\Widgets\Box;
 
 $box = new Box('Box标题', 'Box内容');
 
@@ -37,9 +37,9 @@ echo $box;
 
 ## Collapse组件
 
-`Casbin\Admin\Widgets\Collapse`类用来生成折叠插件：
+`Ladmin\Widgets\Collapse`类用来生成折叠插件：
 ```php
-use Casbin\Admin\Widgets\Collapse;
+use Ladmin\Widgets\Collapse;
 
 $collapse = new Collapse();
 
@@ -55,7 +55,7 @@ echo $collapse->render();
 
 ## 表单
 
-`Casbin\Admin\Widgets\Form`类用来快速构建表单：
+`Ladmin\Widgets\Form`类用来快速构建表单：
 
 ```php
 
@@ -86,10 +86,10 @@ echo $form->render();
 
 ## Infobox组件
 
-`Casbin\Admin\Widgets\InfoBox`类用来生成信息展示块：
+`Ladmin\Widgets\InfoBox`类用来生成信息展示块：
 
 ```php
-use Casbin\Admin\Widgets\InfoBox;
+use Ladmin\Widgets\InfoBox;
 
 $infoBox = new InfoBox('New Users', 'users', 'aqua', '/admin/users', '1024');
 
@@ -101,10 +101,10 @@ echo $infoBox->render();
 
 ## Tab组件
 
-`Casbin\Admin\Widgets\Tab`类用来生成选项卡组件：
+`Ladmin\Widgets\Tab`类用来生成选项卡组件：
 
 ```php
-use Casbin\Admin\Widgets\Tab;
+use Ladmin\Widgets\Tab;
 
 $tab = new Tab();
 
@@ -120,10 +120,10 @@ echo $tab->render();
 
 ## Table
 
-`Casbin\Admin\Widgets\Table`类用来生成表格：
+`Ladmin\Widgets\Table`类用来生成表格：
 
 ```php
-use Casbin\Admin\Widgets\Table;
+use Ladmin\Widgets\Table;
 
 // table 1
 $headers = ['Id', 'Email', 'Name', 'Company'];

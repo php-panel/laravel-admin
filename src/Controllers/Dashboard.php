@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Support\Arr;
 
 class Dashboard
@@ -21,7 +21,7 @@ class Dashboard
     public static function environment()
     {
         $envs = [
-            ['name' => 'PHP version',       'value' => 'PHP/'.PHP_VERSION],
+            ['name' => 'PHP version',       'value' => 'PHP/' . PHP_VERSION],
             ['name' => 'Laravel version',   'value' => app()->version()],
             ['name' => 'CGI',               'value' => php_sapi_name()],
             ['name' => 'Uname',             'value' => php_uname()],

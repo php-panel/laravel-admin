@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Column;
+namespace Ladmin\Grid\Column;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Model;
+use Ladmin\Admin;
+use Ladmin\Grid\Model;
 
 class InputFilter extends Filter
 {
@@ -42,7 +42,7 @@ class InputFilter extends Filter
         }
 
         if (in_array($this->type, ['date', 'time'])) {
-            $method = 'where'.ucfirst($this->type);
+            $method = 'where' . ucfirst($this->type);
             $model->{$method}($this->getColumnName(), $value);
 
             return;

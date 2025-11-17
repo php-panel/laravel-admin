@@ -1,13 +1,13 @@
 <?php
 
-namespace Casbin\Admin\Grid\Exporters;
+namespace Ladmin\Grid\Exporters;
 
-use Casbin\Admin\Grid;
+use Ladmin\Grid;
 
 abstract class AbstractExporter implements ExporterInterface
 {
     /**
-     * @var \Casbin\Admin\Grid
+     * @var \Ladmin\Grid
      */
     protected $grid;
 

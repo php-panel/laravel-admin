@@ -6,7 +6,7 @@ Use `chartjs` for example, first download [chartjs](http://chartjs.org/), put it
 
 Then import the component in `app/Admin/bootstrap.php`:
 ```php
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 
 Admin::js('/vendor/chartjs/dist/Chart.min.js');
 

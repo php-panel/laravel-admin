@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form;
+namespace Ladmin\Form;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class Footer implements Renderable

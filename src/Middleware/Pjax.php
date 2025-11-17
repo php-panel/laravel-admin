@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Middleware;
+namespace Ladmin\Middleware;
 
 use Closure;
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Symfony\Component\DomCrawler\Crawler;
@@ -90,8 +90,8 @@ class Pjax
         $crawler = new Crawler($response->getContent());
 
         $response->setContent(
-            $this->makeTitle($crawler).
-            $this->fetchContents($crawler, $container)
+            $this->makeTitle($crawler) .
+                $this->fetchContents($crawler, $container)
         );
 
         return $this;

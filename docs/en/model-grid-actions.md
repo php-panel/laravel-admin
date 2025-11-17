@@ -41,7 +41,7 @@ First define the action class:
 
 namespace App\Admin\Extensions;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 
 class CheckRow
 {

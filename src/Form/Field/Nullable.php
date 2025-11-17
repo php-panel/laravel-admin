@@ -1,14 +1,12 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 
 class Nullable extends Field
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function __call($method, $parameters)
     {

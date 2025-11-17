@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
 /**
  * Class ListBox.
@@ -44,7 +44,7 @@ class Listbox extends MultipleSelect
     protected function loadRemoteOptions($url, $parameters = [], $options = [])
     {
         $ajaxOptions = json_encode(array_merge([
-            'url' => $url.'?'.http_build_query($parameters),
+            'url' => $url . '?' . http_build_query($parameters),
         ], $options));
 
         $this->script = <<<EOT

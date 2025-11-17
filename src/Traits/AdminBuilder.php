@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Traits;
+namespace Ladmin\Traits;
 
-use Casbin\Admin\Form;
-use Casbin\Admin\Grid;
-use Casbin\Admin\Tree;
+use Ladmin\Form;
+use Ladmin\Grid;
+use Ladmin\Tree;
 
 /**
  * @deprecated

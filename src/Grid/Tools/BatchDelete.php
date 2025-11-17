@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
 class BatchDelete extends BatchAction
 {

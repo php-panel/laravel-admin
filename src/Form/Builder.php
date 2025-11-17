@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Form;
+namespace Ladmin\Form;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form;
-use Casbin\Admin\Form\Field\Hidden;
+use Ladmin\Admin;
+use Ladmin\Form;
+use Ladmin\Form\Field\Hidden;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\URL;
@@ -128,7 +128,7 @@ class Builder
         $this->tools = new Tools($this);
         $this->footer = new Footer($this);
 
-        $this->formClass = 'model-form-'.uniqid();
+        $this->formClass = 'model-form-' . uniqid();
     }
 
     /**
@@ -292,7 +292,7 @@ class Builder
         }
 
         if ($this->isMode(static::MODE_EDIT)) {
-            return $this->form->resource().'/'.$this->id;
+            return $this->form->resource() . '/' . $this->id;
         }
 
         if ($this->isMode(static::MODE_CREATE)) {
@@ -512,7 +512,7 @@ class Builder
             $html[] = "$name=\"$value\"";
         }
 
-        return '<form '.implode(' ', $html).' pjax-container>';
+        return '<form ' . implode(' ', $html) . ' pjax-container>';
     }
 
     /**

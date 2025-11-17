@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
-use Casbin\Admin\Grid\Tools\FixColumns;
+use Ladmin\Grid\Tools\FixColumns;
 use Illuminate\Support\Collection;
 
 trait CanFixColumns

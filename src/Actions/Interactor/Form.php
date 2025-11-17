@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Actions\Interactor;
+namespace Ladmin\Actions\Interactor;
 
-use Casbin\Admin\Actions\RowAction;
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form\Field;
+use Ladmin\Actions\RowAction;
+use Ladmin\Admin;
+use Ladmin\Form\Field;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 use Illuminate\Validation\ValidationException;
@@ -498,7 +498,7 @@ class Form extends Interactor
     {
         if (!$this->modalId) {
             if ($this->action instanceof RowAction) {
-                $this->modalId = uniqid('row-action-modal-').mt_rand(1000, 9999);
+                $this->modalId = uniqid('row-action-modal-') . mt_rand(1000, 9999);
             } else {
                 $this->modalId = strtolower(str_replace('\\', '-', get_class($this->action)));
             }

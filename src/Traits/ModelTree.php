@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Traits;
+namespace Ladmin\Traits;
 
-use Casbin\Admin\Tree;
+use Ladmin\Tree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
@@ -176,7 +176,7 @@ trait ModelTree
     public function allNodes()
     {
         $orderColumn = DB::getQueryGrammar()->wrap($this->orderColumn);
-        $byOrder = $orderColumn.' = 0,'.$orderColumn;
+        $byOrder = $orderColumn . ' = 0,' . $orderColumn;
 
         $self = new static();
 
@@ -255,7 +255,7 @@ trait ModelTree
      */
     protected function buildSelectOptions(array $nodes = [], $parentId = 0, $prefix = '', $space = '&nbsp;')
     {
-        $prefix = $prefix ?: '┝'.$space;
+        $prefix = $prefix ?: '┝' . $space;
 
         $options = [];
 
@@ -265,9 +265,9 @@ trait ModelTree
 
         foreach ($nodes as $index => $node) {
             if ($node[$this->parentColumn] == $parentId) {
-                $node[$this->titleColumn] = $prefix.$space.$node[$this->titleColumn];
+                $node[$this->titleColumn] = $prefix . $space . $node[$this->titleColumn];
 
-                $childrenPrefix = str_replace('┝', str_repeat($space, 6), $prefix).'┝'.str_replace(['┝', $space], '', $prefix);
+                $childrenPrefix = str_replace('┝', str_repeat($space, 6), $prefix) . '┝' . str_replace(['┝', $space], '', $prefix);
 
                 $children = $this->buildSelectOptions($nodes, $node[$this->getKeyName()], $childrenPrefix);
 

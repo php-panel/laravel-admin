@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
 trait ContainsForms
 {
@@ -38,7 +38,7 @@ trait ContainsForms
 
         foreach ($forms as $name => $class) {
             if (!is_subclass_of($class, Form::class)) {
-                admin_error("Class [{$class}] must be a sub-class of [Casbin\Admin\Widgets\Form].");
+                admin_error("Class [{$class}] must be a sub-class of [Ladmin\Widgets\Form].");
                 continue;
             }
 

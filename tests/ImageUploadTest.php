@@ -1,6 +1,6 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Administrator;
 use Illuminate\Support\Facades\File;
 use Tests\Models\Image;
 use Tests\Models\MultipleImage;
@@ -38,12 +38,12 @@ class ImageUploadTest extends TestCase
     protected function uploadImages()
     {
         return $this->visit('admin/images/create')
-            ->attach(__DIR__.'/assets/test.jpg', 'image1')
-            ->attach(__DIR__.'/assets/test.jpg', 'image2')
-            ->attach(__DIR__.'/assets/test.jpg', 'image3')
-            ->attach(__DIR__.'/assets/test.jpg', 'image4')
-            ->attach(__DIR__.'/assets/test.jpg', 'image5')
-            ->attach(__DIR__.'/assets/test.jpg', 'image6')
+            ->attach(__DIR__ . '/assets/test.jpg', 'image1')
+            ->attach(__DIR__ . '/assets/test.jpg', 'image2')
+            ->attach(__DIR__ . '/assets/test.jpg', 'image3')
+            ->attach(__DIR__ . '/assets/test.jpg', 'image4')
+            ->attach(__DIR__ . '/assets/test.jpg', 'image5')
+            ->attach(__DIR__ . '/assets/test.jpg', 'image6')
             ->press('Submit');
     }
 
@@ -61,7 +61,7 @@ class ImageUploadTest extends TestCase
         $images = Image::first()->toArray();
 
         foreach (range(1, 6) as $index) {
-            $this->assertFileExists(public_path('uploads/'.$images['image'.$index]));
+            $this->assertFileExists(public_path('uploads/' . $images['image' . $index]));
         }
 
         $this->assertFileExists(public_path('uploads/images/asdasdasdasdasd.jpeg'));
@@ -99,9 +99,9 @@ class ImageUploadTest extends TestCase
             ->seeInElement('button[type=reset]', 'Reset')
             ->seeInElement('button[type=submit]', 'Submit');
 
-        $this->attach(__DIR__.'/assets/test.jpg', 'image3')
-            ->attach(__DIR__.'/assets/test.jpg', 'image4')
-            ->attach(__DIR__.'/assets/test.jpg', 'image5')
+        $this->attach(__DIR__ . '/assets/test.jpg', 'image3')
+            ->attach(__DIR__ . '/assets/test.jpg', 'image4')
+            ->attach(__DIR__ . '/assets/test.jpg', 'image5')
             ->press('Submit');
 
         $new = Image::first();
@@ -133,7 +133,7 @@ class ImageUploadTest extends TestCase
             ->dontSeeInDatabase('test_images', ['id' => 1]);
 
         foreach (range(1, 6) as $index) {
-            $this->assertFileDoesNotExist(public_path('uploads/'.$images['image'.$index]));
+            $this->assertFileDoesNotExist(public_path('uploads/' . $images['image' . $index]));
         }
 
         $this->visit('admin/images')
@@ -174,7 +174,7 @@ class ImageUploadTest extends TestCase
         $this->visit('admin/multiple-images/create')
             ->seeElement('input[type=file][name="pictures[]"][multiple]');
 
-        $path = __DIR__.'/assets/test.jpg';
+        $path = __DIR__ . '/assets/test.jpg';
 
         $file = new \Illuminate\Http\UploadedFile($path, 'test.jpg', 'image/jpeg', null, true);
 
@@ -199,7 +199,7 @@ class ImageUploadTest extends TestCase
         $this->assertCount($size, $pictures);
 
         foreach ($pictures as $picture) {
-            $this->assertFileExists(public_path('uploads/'.$picture));
+            $this->assertFileExists(public_path('uploads/' . $picture));
         }
     }
 
@@ -208,7 +208,7 @@ class ImageUploadTest extends TestCase
         File::cleanDirectory(public_path('uploads/images'));
 
         // upload files
-        $path = __DIR__.'/assets/test.jpg';
+        $path = __DIR__ . '/assets/test.jpg';
 
         $file = new \Illuminate\Http\UploadedFile($path, 'test.jpg', 'image/jpeg', null, true);
 

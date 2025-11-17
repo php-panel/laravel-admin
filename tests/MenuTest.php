@@ -1,7 +1,7 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
-use Casbin\Admin\Auth\Database\Menu;
+use Ladmin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Menu;
 
 class MenuTest extends TestCase
 {

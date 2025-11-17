@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
-use Casbin\Admin\Grid\Column;
-use Casbin\Admin\Grid\Model;
-use Casbin\Admin\Grid\Tools;
+use Ladmin\Grid\Column;
+use Ladmin\Grid\Model;
+use Ladmin\Grid\Tools;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
@@ -69,7 +69,7 @@ trait HasQuickSearch
         if (is_array($this->search)) {
             $this->model()->where(function (Builder $builder) use ($query) {
                 foreach ($this->search as $column) {
-                    $this->addWhereLikeBinding($builder, $column, true, '%'.$query.'%');
+                    $this->addWhereLikeBinding($builder, $column, true, '%' . $query . '%');
                 }
             });
         } elseif (is_null($this->search)) {
@@ -189,7 +189,7 @@ trait HasQuickSearch
      */
     protected function addWhereDatetimeBinding(Builder $builder, string $column, bool $or, string $function, string $value)
     {
-        $method = ($or ? 'orWhere' : 'where').ucfirst($function);
+        $method = ($or ? 'orWhere' : 'where') . ucfirst($function);
 
         $builder->{$method}($column, $value);
     }
@@ -215,7 +215,7 @@ trait HasQuickSearch
 
         $where = $or ? 'orWhere' : 'where';
 
-        $method = $where.($not ? 'NotIn' : 'In');
+        $method = $where . ($not ? 'NotIn' : 'In');
 
         $builder->{$method}($column, $values);
     }

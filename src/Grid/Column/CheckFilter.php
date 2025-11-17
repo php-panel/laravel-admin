@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Column;
+namespace Ladmin\Grid\Column;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Model;
+use Ladmin\Admin;
+use Ladmin\Grid\Model;
 
 class CheckFilter extends Filter
 {

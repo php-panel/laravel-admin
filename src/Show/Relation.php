@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Show;
+namespace Ladmin\Show;
 
-use Casbin\Admin\Grid;
-use Casbin\Admin\Show;
+use Ladmin\Grid;
+use Ladmin\Show;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -80,9 +80,7 @@ class Relation extends Field
     protected function getNullRenderable()
     {
         return new class() implements Renderable {
-            public function render()
-            {
-            }
+            public function render() {}
         };
     }
 
@@ -97,7 +95,8 @@ class Relation extends Field
 
         $renderable = $this->getNullRenderable();
 
-        if ($relation    instanceof HasOne
+        if (
+            $relation    instanceof HasOne
             || $relation instanceof BelongsTo
             || $relation instanceof MorphOne
         ) {
@@ -112,7 +111,8 @@ class Relation extends Field
             $renderable->panel()->title($this->title);
         }
 
-        if ($relation    instanceof HasMany
+        if (
+            $relation    instanceof HasMany
             || $relation instanceof MorphMany
             || $relation instanceof BelongsToMany
             || $relation instanceof HasManyThrough

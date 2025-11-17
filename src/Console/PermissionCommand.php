@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
-use Casbin\Admin\Auth\Database\Permission;
+use Ladmin\Auth\Database\Permission;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
@@ -138,12 +138,12 @@ class PermissionCommand extends Command
             case 'create':
             case 'list':
             case 'filter':
-                $http_path = '/'.$resource;
+                $http_path = '/' . $resource;
                 break;
             case 'edit':
             case 'delete':
             case 'view':
-                $http_path = '/'.$resource.'/*';
+                $http_path = '/' . $resource . '/*';
                 break;
             default:
                 $http_path = '';
@@ -154,11 +154,11 @@ class PermissionCommand extends Command
 
     private function generateSlug($table, $permission)
     {
-        return Str::kebab(Str::camel($table)).'.'.$permission;
+        return Str::kebab(Str::camel($table)) . '.' . $permission;
     }
 
     private function generateName($table, $permission_lang)
     {
-        return Str::upper(Str::kebab(Str::camel($table))).$permission_lang;
+        return Str::upper(Str::kebab(Str::camel($table))) . $permission_lang;
     }
 }

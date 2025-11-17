@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter\Presenter;
+namespace Ladmin\Grid\Filter\Presenter;
 
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 use Illuminate\Contracts\Support\Arrayable;
 
 class Radio extends Presenter

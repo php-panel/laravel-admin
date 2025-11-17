@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 use Illuminate\Console\Command;
 
 class MenuCommand extends Command

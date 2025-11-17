@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 use Illuminate\Console\Command;
 

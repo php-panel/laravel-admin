@@ -1,7 +1,7 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
-use Casbin\Admin\Auth\Database\OperationLog;
+use Ladmin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\OperationLog;
 
 class OperationLogTest extends TestCase
 {

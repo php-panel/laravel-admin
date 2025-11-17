@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
-use Casbin\Admin\Grid\Column;
+use Ladmin\Grid\Column;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

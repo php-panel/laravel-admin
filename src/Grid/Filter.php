@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Grid;
+namespace Ladmin\Grid;
 
-use Casbin\Admin\Grid\Filter\AbstractFilter;
-use Casbin\Admin\Grid\Filter\Layout\Layout;
-use Casbin\Admin\Grid\Filter\Scope;
+use Ladmin\Grid\Filter\AbstractFilter;
+use Ladmin\Grid\Filter\Layout\Layout;
+use Ladmin\Grid\Filter\Scope;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
@@ -617,10 +617,10 @@ class Filter implements Renderable
         $query = $request->query();
         Arr::forget($query, $keys);
 
-        $question = $request->getBaseUrl().$request->getPathInfo() == '/' ? '/?' : '?';
+        $question = $request->getBaseUrl() . $request->getPathInfo() == '/' ? '/?' : '?';
 
         return count($request->query()) > 0
-            ? $request->url().$question.http_build_query($query)
+            ? $request->url() . $question . http_build_query($query)
             : $request->fullUrl();
     }
 
@@ -631,7 +631,7 @@ class Filter implements Renderable
     public static function extend($name, $filterClass)
     {
         if (!is_subclass_of($filterClass, AbstractFilter::class)) {
-            throw new \InvalidArgumentException("The class [$filterClass] must be a type of ".AbstractFilter::class.'.');
+            throw new \InvalidArgumentException("The class [$filterClass] must be a type of " . AbstractFilter::class . '.');
         }
 
         static::$supports[$name] = $filterClass;

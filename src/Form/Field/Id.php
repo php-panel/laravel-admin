@@ -1,9 +1,7 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 
-class Id extends Field
-{
-}
+class Id extends Field {}

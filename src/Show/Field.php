@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Show;
+namespace Ladmin\Show;
 
-use Casbin\Admin\Show;
-use Casbin\Admin\Widgets\Carousel;
+use Ladmin\Show;
+use Ladmin\Widgets\Carousel;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
@@ -221,7 +221,7 @@ class Field implements Renderable
                 if (url()->isValidUrl($path)) {
                     $src = $path;
                 } elseif ($server) {
-                    $src = $server.$path;
+                    $src = $server . $path;
                 } else {
                     $disk = config('admin.upload.disk');
 
@@ -257,7 +257,7 @@ class Field implements Renderable
                 if (url()->isValidUrl($path)) {
                     $image = $path;
                 } elseif ($server) {
-                    $image = $server.$path;
+                    $image = $server . $path;
                 } else {
                     $disk = config('admin.upload.disk');
 
@@ -299,12 +299,12 @@ class Field implements Renderable
             if (url()->isValidUrl($path)) {
                 $url = $path;
             } elseif ($server) {
-                $url = $server.$path;
+                $url = $server . $path;
             } else {
                 $storage = Storage::disk(config('admin.upload.disk'));
                 if ($storage->exists($path)) {
                     $url = $storage->url($path);
-                    $size = ($storage->size($path) / 1000).'KB';
+                    $size = ($storage->size($path) / 1000) . 'KB';
                 }
             }
 
@@ -425,7 +425,7 @@ HTML;
             if (json_last_error() == 0) {
                 $field->border = false;
 
-                return '<pre><code>'.json_encode($content, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE).'</code></pre>';
+                return '<pre><code>' . json_encode($content, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . '</code></pre>';
             }
 
             return $value;

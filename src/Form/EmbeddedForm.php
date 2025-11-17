@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form;
+namespace Ladmin\Form;
 
-use Casbin\Admin\Form;
-use Casbin\Admin\Widgets\Form as WidgetForm;
+use Ladmin\Form;
+use Ladmin\Widgets\Form as WidgetForm;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 
 class FilterButton extends AbstractTool
 {
@@ -22,7 +22,7 @@ class FilterButton extends AbstractTool
             'scopes'    => $filter->getScopes(),
             'label'     => $label,
             'cancel'    => $filter->urlWithoutScopes(),
-            'btn_class' => uniqid().'-filter-btn',
+            'btn_class' => uniqid() . '-filter-btn',
             'expand'    => $filter->expand,
             'filter_id' => $filter->getFilterID(),
         ]);

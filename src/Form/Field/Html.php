@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 use Illuminate\Support\Arr;
 
 class Html extends Field

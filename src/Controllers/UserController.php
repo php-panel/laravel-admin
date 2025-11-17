@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
-use Casbin\Admin\Form;
-use Casbin\Admin\Grid;
-use Casbin\Admin\Show;
+use Ladmin\Form;
+use Ladmin\Grid;
+use Ladmin\Show;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends AdminController

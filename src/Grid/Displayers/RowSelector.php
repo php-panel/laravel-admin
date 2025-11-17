@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 
 class RowSelector extends AbstractDisplayer
 {

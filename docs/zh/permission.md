@@ -22,7 +22,7 @@
 第二步可以把这个权限直接附加给个人或者角色，在用户编辑页面可以直接把上面创建好的权限附加给当前编辑用户，也可以在编辑角色页面附加给某个角色。
 第三步，在创建文章控制器里面添加控制代码：
 ```php
-use Casbin\Admin\Auth\Permission;
+use Ladmin\Auth\Permission;
 
 class PostController extends Controller
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 
 /**
  * Class Copyable.

@@ -2,7 +2,7 @@
 
 The layout usage of `laravel-admin` can be found in the `index()` method of the home page's layout file [HomeController.php](https://github.com/z-song/laravel-admin/blob/master/src/Console/stubs/HomeController.stub).
 
-The `Casbin\Admin\Layout\Content` class is used to implement the layout of the content area. The `Content::body ($element)` method is used to add page content:
+The `Ladmin\Layout\Content` class is used to implement the layout of the content area. The `Content::body ($element)` method is used to add page content:
 
 The page code for an unfilled content is as follows：
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Traits;
+namespace Ladmin\Traits;
 
-use Casbin\Admin\Grid\Model as GridModel;
+use Ladmin\Grid\Model as GridModel;
 
 trait ShouldSnakeAttributes
 {

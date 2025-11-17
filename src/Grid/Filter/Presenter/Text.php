@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter\Presenter;
+namespace Ladmin\Grid\Filter\Presenter;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 
 class Text extends Presenter
 {

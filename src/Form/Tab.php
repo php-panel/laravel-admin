@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form;
+namespace Ladmin\Form;
 
-use Casbin\Admin\Form;
+use Ladmin\Form;
 use Illuminate\Support\Collection;
 
 class Tab
@@ -47,7 +47,7 @@ class Tab
     {
         $fields = $this->collectFields($content);
 
-        $id = 'form-'.($this->tabs->count() + 1);
+        $id = 'form-' . ($this->tabs->count() + 1);
 
         $this->tabs->push(compact('id', 'title', 'fields', 'active'));
 

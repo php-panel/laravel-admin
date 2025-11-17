@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
-use Casbin\Admin\Auth\Database\Menu;
+use Ladmin\Auth\Database\Menu;
 use Illuminate\Console\Command;
 use Illuminate\Routing\Route;
 use Illuminate\Routing\Router;

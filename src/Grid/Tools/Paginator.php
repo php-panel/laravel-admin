@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
-use Casbin\Admin\Grid;
+use Ladmin\Grid;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class Paginator extends AbstractTool
@@ -99,8 +99,8 @@ class Paginator extends AbstractTool
             return '';
         }
 
-        return $this->paginationRanger().
-            $this->paginationLinks().
+        return $this->paginationRanger() .
+            $this->paginationLinks() .
             $this->perPageSelector();
     }
 }

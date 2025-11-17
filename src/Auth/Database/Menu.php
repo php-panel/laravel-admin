@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Auth\Database;
+namespace Ladmin\Auth\Database;
 
-use Casbin\Admin\Traits\DefaultDatetimeFormat;
-use Casbin\Admin\Traits\ModelTree;
+use Ladmin\Traits\DefaultDatetimeFormat;
+use Ladmin\Traits\ModelTree;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Facades\DB;
@@ -67,7 +67,7 @@ class Menu extends Model
         $connection = config('admin.database.connection') ?: config('database.default');
         $orderColumn = DB::connection($connection)->getQueryGrammar()->wrap($this->orderColumn);
 
-        $byOrder = 'ROOT ASC,'.$orderColumn;
+        $byOrder = 'ROOT ASC,' . $orderColumn;
 
         $query = static::query();
 
@@ -75,7 +75,7 @@ class Menu extends Model
             $query->with('roles');
         }
 
-        return $query->selectRaw('*, '.$orderColumn.' ROOT')->orderByRaw($byOrder)->get()->toArray();
+        return $query->selectRaw('*, ' . $orderColumn . ' ROOT')->orderByRaw($byOrder)->get()->toArray();
     }
 
     /**

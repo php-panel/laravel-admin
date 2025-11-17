@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
-use Casbin\Admin\Form;
-use Casbin\Admin\Grid;
-use Casbin\Admin\Show;
+use Ladmin\Form;
+use Ladmin\Grid;
+use Ladmin\Show;
 use Illuminate\Support\Str;
 
 class PermissionController extends AdminController
@@ -48,7 +48,7 @@ class PermissionController extends AdminController
                 })->implode('&nbsp;');
 
                 if (!empty(config('admin.route.prefix'))) {
-                    $path = '/'.trim(config('admin.route.prefix'), '/').$path;
+                    $path = '/' . trim(config('admin.route.prefix'), '/') . $path;
                 }
 
                 return "<div style='margin-bottom: 5px;'>$method<code>$path</code></div>";
@@ -100,7 +100,7 @@ class PermissionController extends AdminController
                 })->implode('&nbsp;');
 
                 if (!empty(config('admin.route.prefix'))) {
-                    $path = '/'.trim(config('admin.route.prefix'), '/').$path;
+                    $path = '/' . trim(config('admin.route.prefix'), '/') . $path;
                 }
 
                 return "<div style='margin-bottom: 5px;'>$method<code>$path</code></div>";

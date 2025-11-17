@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Exporters;
+namespace Ladmin\Grid\Exporters;
 
 interface ExporterInterface
 {

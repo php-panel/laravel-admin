@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Column;
+namespace Ladmin\Grid\Column;
 
 use Illuminate\Contracts\Support\Renderable;
 
@@ -83,7 +83,7 @@ class Sorter implements Renderable
         $query = \request()->all();
         $query = array_merge($query, [$this->sortName => $sort]);
 
-        $url = url()->current().'?'.http_build_query($query);
+        $url = url()->current() . '?' . http_build_query($query);
 
         return "<a class=\"fa fa-fw $icon\" href=\"$url\"></a>";
     }

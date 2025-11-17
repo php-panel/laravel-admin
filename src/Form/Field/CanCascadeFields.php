@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form;
+use Ladmin\Admin;
+use Ladmin\Form;
 use Illuminate\Support\Arr;
 
 /**

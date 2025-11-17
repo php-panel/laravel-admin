@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter;
+namespace Ladmin\Grid\Filter;
 
 use Illuminate\Support\Arr;
 
@@ -50,7 +50,7 @@ class Where extends AbstractFilter
     {
         $reflection = new \ReflectionFunction($closure);
 
-        return md5($reflection->getFileName().$reflection->getStartLine().$reflection->getEndLine().$label);
+        return md5($reflection->getFileName() . $reflection->getStartLine() . $reflection->getEndLine() . $label);
     }
 
     /**

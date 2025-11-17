@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin;
+namespace Ladmin;
 
-use Casbin\Admin\Auth\Database\Permission;
+use Ladmin\Auth\Database\Permission;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
@@ -278,7 +278,7 @@ abstract class Extension
             return true;
         }
 
-        $message = "Invalid menu:\r\n".implode("\r\n", Arr::flatten($validator->errors()->messages()));
+        $message = "Invalid menu:\r\n" . implode("\r\n", Arr::flatten($validator->errors()->messages()));
 
         throw new \Exception($message);
     }
@@ -320,7 +320,7 @@ abstract class Extension
             return true;
         }
 
-        $message = "Invalid permission:\r\n".implode("\r\n", Arr::flatten($validator->errors()->messages()));
+        $message = "Invalid permission:\r\n" . implode("\r\n", Arr::flatten($validator->errors()->messages()));
 
         throw new \Exception($message);
     }
@@ -401,7 +401,7 @@ abstract class Extension
         $permissionModel::create([
             'name'        => $name,
             'slug'        => $slug,
-            'http_path'   => '/'.trim($path, '/'),
+            'http_path'   => '/' . trim($path, '/'),
             'http_method' => $methods,
         ]);
     }

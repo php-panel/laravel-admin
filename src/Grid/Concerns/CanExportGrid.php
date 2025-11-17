@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
-use Casbin\Admin\Grid;
-use Casbin\Admin\Grid\Exporter;
-use Casbin\Admin\Grid\Exporters\AbstractExporter;
+use Ladmin\Grid;
+use Ladmin\Grid\Exporter;
+use Ladmin\Grid\Exporters\AbstractExporter;
 
 trait CanExportGrid
 {
@@ -78,7 +78,7 @@ trait CanExportGrid
             $input = array_merge($input, $constraints);
         }
 
-        return $this->resource().'?'.http_build_query($input);
+        return $this->resource() . '?' . http_build_query($input);
     }
 
     /**

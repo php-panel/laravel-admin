@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Widgets\Navbar;
+namespace Ladmin\Widgets\Navbar;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class RefreshButton implements Renderable

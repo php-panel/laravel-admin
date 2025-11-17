@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin;
+namespace Ladmin;
 
 use Closure;
-use Casbin\Admin\Tree\Tools;
+use Ladmin\Tree\Tools;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 

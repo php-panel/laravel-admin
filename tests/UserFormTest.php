@@ -1,6 +1,6 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Administrator;
 use Tests\Models\User as UserModel;
 
 class UserFormTest extends TestCase
@@ -60,7 +60,7 @@ class UserFormTest extends TestCase
         ];
 
         $this->visit('admin/users/create')
-            ->attach(__DIR__.'/assets/test.jpg', 'avatar')
+            ->attach(__DIR__ . '/assets/test.jpg', 'avatar')
 
             ->submitForm('Submit', $data)
             ->seePageIs('admin/users')
@@ -96,7 +96,7 @@ class UserFormTest extends TestCase
 
         $avatar = UserModel::first()->avatar;
 
-        $this->assertFileExists(public_path('uploads/'.$avatar));
+        $this->assertFileExists(public_path('uploads/' . $avatar));
     }
 
     protected function seedsTable($count = 100)

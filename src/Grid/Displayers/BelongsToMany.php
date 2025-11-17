@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany as Relation;
 use Illuminate\Support\Arr;
@@ -29,7 +29,8 @@ class BelongsToMany extends BelongsTo
 
         $model = $this->getGrid()->model()->getOriginalModel();
 
-        if (is_callable([$model, $this->getName()]) &&
+        if (
+            is_callable([$model, $this->getName()]) &&
             ($relation = $model->{$this->getName()}()) instanceof Relation
         ) {
             /* @var Relation $relation */
@@ -64,7 +65,7 @@ class BelongsToMany extends BelongsTo
         if (is_null($first)) {
             $data = null;
 
-        // MultipleSelect value store as an ont-to-many relationship.
+            // MultipleSelect value store as an ont-to-many relationship.
         } elseif (is_array($first)) {
             foreach ($relations as $relation) {
                 $data[] = Arr::get($relation, "pivot.{$this->getOtherKey()}");

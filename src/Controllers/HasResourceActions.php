@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
 trait HasResourceActions
 {

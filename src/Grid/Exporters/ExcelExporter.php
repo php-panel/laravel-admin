@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Exporters;
+namespace Ladmin\Grid\Exporters;
 
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\Exportable;

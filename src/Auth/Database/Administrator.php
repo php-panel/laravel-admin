@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Auth\Database;
+namespace Ladmin\Auth\Database;
 
-use Casbin\Admin\Traits\DefaultDatetimeFormat;
+use Ladmin\Traits\DefaultDatetimeFormat;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model;

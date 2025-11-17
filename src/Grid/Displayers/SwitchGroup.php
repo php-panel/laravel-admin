@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Support\Arr;
 
 class SwitchGroup extends SwitchDisplay
@@ -23,13 +23,13 @@ class SwitchGroup extends SwitchDisplay
             $html[] = $this->buildSwitch($column, $label);
         }
 
-        return '<table>'.implode('', $html).'</table>';
+        return '<table>' . implode('', $html) . '</table>';
     }
 
     protected function buildSwitch($name, $label = '')
     {
         return Admin::component('admin::grid.inline-edit.switch-group', [
-            'class'    => 'grid-switch-'.str_replace('.', '-', $name),
+            'class'    => 'grid-switch-' . str_replace('.', '-', $name),
             'key'      => $this->getKey(),
             'resource' => $this->getResource(),
             'name'     => $this->getPayloadName($name),

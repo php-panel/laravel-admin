@@ -10,7 +10,7 @@ form表单内置的`map`和`editor`组件通过cdn的方式引用了前端文件
 
 <?php
 
-use Casbin\Admin\Form;
+use Ladmin\Form;
 
 Form::forget('map');
 Form::forget('editor');
@@ -41,7 +41,7 @@ Form::forget(['map', 'editor']);
 
 namespace App\Admin\Extensions;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 
 class WangEditor extends Field
 {
@@ -104,7 +104,7 @@ EOT;
 <?php
 
 use App\Admin\Extensions\WangEditor;
-use Casbin\Admin\Form;
+use Ladmin\Form;
 
 Form::extend('editor', WangEditor::class);
 
@@ -128,7 +128,7 @@ $form->editor('body');
 
 namespace App\Admin\Extensions\Form;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 
 class CKEditor extends Field
 {
@@ -170,7 +170,7 @@ class CKEditor extends Field
 然后在`app/Admin/bootstrap.php`中引入扩展：
 ```php
 use App\Admin\Extensions\Form\CKEditor;
-use Casbin\Admin\Form;
+use Ladmin\Form;
 
 Form::extend('ckeditor', CKEditor::class);
 ```
@@ -194,7 +194,7 @@ $form->ckeditor('content');
 
 namespace App\Admin\Extensions;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 
 class PHPEditor extends Field
 {
@@ -263,7 +263,7 @@ EOT;
 <?php
 
 use App\Admin\Extensions\PHPEditor;
-use Casbin\Admin\Form;
+use Ladmin\Form;
 
 Form::extend('php', PHPEditor::class);
 

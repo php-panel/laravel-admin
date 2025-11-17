@@ -2,7 +2,7 @@
 
 `model-grid` built-in a lot of the operation of the column, you can use these methods very flexible operation of the column data.
 
-The `Casbin\Admin\Grid\Column` object has a built-in `display()` method to handle the value of the current column through the incoming callback function:
+The `Ladmin\Grid\Column` object has a built-in `display()` method to handle the value of the current column through the incoming callback function:
 ```php
 $grid->column('title')->display(function ($title) {
 
@@ -163,7 +163,7 @@ There are two ways to extend the column function, the first one is through the a
 
 Add following code to `app/Admin/bootstrap.php`:
 ```php
-use Casbin\Admin\Grid\Column;
+use Ladmin\Grid\Column;
 
 Column::extend('color', function ($value, $color) {
     return "<span style='color: $color'>$value</span>";
@@ -184,8 +184,8 @@ Extension class `app/Admin/Extensions/Popover.php`:
 
 namespace App\Admin\Extensions;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Displayers\AbstractDisplayer;
+use Ladmin\Admin;
+use Ladmin\Grid\Displayers\AbstractDisplayer;
 
 class Popover extends AbstractDisplayer
 {
@@ -212,7 +212,7 @@ EOT;
 ```
 And then register the extension in `app/Admin/bootstrap.php`：
 ```php
-use Casbin\Admin\Grid\Column;
+use Ladmin\Grid\Column;
 use App\Admin\Extensions\Popover;
 
 Column::extend('popover', Popover::class);

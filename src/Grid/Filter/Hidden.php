@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter;
+namespace Ladmin\Grid\Filter;
 
 class Hidden extends AbstractFilter
 {
@@ -30,9 +30,7 @@ class Hidden extends AbstractFilter
     /**
      * {@inheritdoc}
      */
-    public function condition($inputs)
-    {
-    }
+    public function condition($inputs) {}
 
     /**
      * {@inheritdoc}

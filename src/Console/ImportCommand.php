@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 

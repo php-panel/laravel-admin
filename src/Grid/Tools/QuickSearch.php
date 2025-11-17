@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
-use Casbin\Admin\Grid\Concerns\HasQuickSearch;
+use Ladmin\Grid\Concerns\HasQuickSearch;
 use Illuminate\Support\Arr;
 
 class QuickSearch extends AbstractTool
@@ -41,7 +41,7 @@ class QuickSearch extends AbstractTool
         Arr::forget($query, HasQuickSearch::$searchKey);
 
         $vars = [
-            'action'      => request()->url().'?'.http_build_query($query),
+            'action'      => request()->url() . '?' . http_build_query($query),
             'key'         => HasQuickSearch::$searchKey,
             'value'       => request(HasQuickSearch::$searchKey),
             'placeholder' => $this->placeholder,

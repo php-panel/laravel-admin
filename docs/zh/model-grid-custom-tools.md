@@ -9,8 +9,8 @@
 
 namespace App\Admin\Extensions\Tools;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Tools\AbstractTool;
+use Ladmin\Admin;
+use Ladmin\Grid\Tools\AbstractTool;
 use Illuminate\Support\Facades\Request;
 
 class UserGender extends AbstractTool
@@ -98,7 +98,7 @@ $grid->tools(function ($tools) {
 
 namespace App\Admin\Extensions\Tools;
 
-use Casbin\Admin\Grid\Tools\BatchAction;
+use Ladmin\Grid\Tools\BatchAction;
 
 class ReleasePost extends BatchAction
 {

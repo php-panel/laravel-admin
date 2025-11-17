@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Show;
+namespace Ladmin\Show;
 
-use Casbin\Admin\Show;
+use Ladmin\Show;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
 

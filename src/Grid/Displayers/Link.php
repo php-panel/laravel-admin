@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
 class Link extends AbstractDisplayer
 {

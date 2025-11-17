@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Grid;
+namespace Ladmin\Grid;
 
-use Casbin\Admin\Grid;
-use Casbin\Admin\Grid\Selectable\Checkbox;
-use Casbin\Admin\Grid\Selectable\Radio;
+use Ladmin\Grid;
+use Ladmin\Grid\Selectable\Checkbox;
+use Ladmin\Grid\Selectable\Radio;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Casbin\Admin;
+namespace Ladmin;
 
-use Casbin\Admin\Show\Divider;
-use Casbin\Admin\Show\Field;
-use Casbin\Admin\Show\Panel;
-use Casbin\Admin\Show\Relation;
-use Casbin\Admin\Traits\ShouldSnakeAttributes;
+use Ladmin\Show\Divider;
+use Ladmin\Show\Field;
+use Ladmin\Show\Panel;
+use Ladmin\Show\Relation;
+use Ladmin\Traits\ShouldSnakeAttributes;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -433,7 +433,8 @@ class Show implements Renderable
             return false;
         }
 
-        if ($relation    instanceof HasOne
+        if (
+            $relation    instanceof HasOne
             || $relation instanceof BelongsTo
             || $relation instanceof MorphOne
         ) {
@@ -452,7 +453,8 @@ class Show implements Renderable
             );
         }
 
-        if ($relation    instanceof HasMany
+        if (
+            $relation    instanceof HasMany
             || $relation instanceof MorphMany
             || $relation instanceof BelongsToMany
             || $relation instanceof HasManyThrough

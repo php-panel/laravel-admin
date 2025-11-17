@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Selectable;
+namespace Ladmin\Grid\Selectable;
 
 use Illuminate\Contracts\Support\Renderable;
 

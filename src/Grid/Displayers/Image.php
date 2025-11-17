@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Facades\Storage;
@@ -17,7 +17,7 @@ class Image extends AbstractDisplayer
             if (url()->isValidUrl($path) || strpos($path, 'data:image') === 0) {
                 $src = $path;
             } elseif ($server) {
-                $src = rtrim($server, '/').'/'.ltrim($path, '/');
+                $src = rtrim($server, '/') . '/' . ltrim($path, '/');
             } else {
                 $src = Storage::disk(config('admin.upload.disk'))->url($path);
             }

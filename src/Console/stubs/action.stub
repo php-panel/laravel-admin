@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Casbin\Admin\Actions\Action;
+use Ladmin\Actions\Action;
 use Illuminate\Http\Request;
 
 class DummyClass extends Action

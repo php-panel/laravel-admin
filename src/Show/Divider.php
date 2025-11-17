@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Show;
+namespace Ladmin\Show;
 
 class Divider extends Field
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form;
+use Ladmin\Form;
 
 class Captcha extends Text
 {

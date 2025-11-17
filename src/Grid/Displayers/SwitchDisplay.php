@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Support\Arr;
 
 class SwitchDisplay extends AbstractDisplayer
@@ -31,7 +31,7 @@ class SwitchDisplay extends AbstractDisplayer
         $this->overrideStates($states);
 
         return Admin::component('admin::grid.inline-edit.switch', [
-            'class'    => 'grid-switch-'.str_replace('.', '-', $this->getName()),
+            'class'    => 'grid-switch-' . str_replace('.', '-', $this->getName()),
             'key'      => $this->getKey(),
             'resource' => $this->getResource(),
             'name'     => $this->getPayloadName(),

@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Actions;
+namespace Ladmin\Actions;
 
 use Illuminate\Http\Request;
 
@@ -31,7 +31,7 @@ abstract class BatchAction extends GridAction
             return $this;
         }
         if (!is_string($cssClass)) {
-            throw new \Exception(__METHOD__.': item is not a valid string');
+            throw new \Exception(__METHOD__ . ': item is not a valid string');
         }
         $this->cssClasses[] = $cssClass;
 
@@ -51,11 +51,11 @@ abstract class BatchAction extends GridAction
             return $this;
         }
         if (!is_array($cssClasses)) {
-            throw new \Exception(__METHOD__.': parameter is not a valid array');
+            throw new \Exception(__METHOD__ . ': parameter is not a valid array');
         }
         foreach ($cssClasses as $item) {
             if (!is_string($item)) {
-                throw new \Exception(__METHOD__.': item is not a valid string');
+                throw new \Exception(__METHOD__ . ': item is not a valid string');
             }
             $this->cssClasses[] = $item;
         }

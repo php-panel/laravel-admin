@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
-use Casbin\Admin\Grid;
-use Casbin\Admin\Grid\Tools\Selector;
+use Ladmin\Grid;
+use Ladmin\Grid\Tools\Selector;
 
 /**
  * @mixin Grid

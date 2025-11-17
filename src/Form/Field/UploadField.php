@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form;
+use Ladmin\Form;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
@@ -130,7 +130,7 @@ trait UploadField
         ];
 
         if ($this->form instanceof Form) {
-            $defaults['deleteUrl'] = $this->form->resource().'/'.$this->form->model()->getKey();
+            $defaults['deleteUrl'] = $this->form->resource() . '/' . $this->form->model()->getKey();
         }
 
         $defaults = array_merge($defaults, ['fileActionSettings' => $this->fileActionSettings]);
@@ -457,7 +457,7 @@ trait UploadField
      */
     protected function generateUniqueName(UploadedFile $file)
     {
-        return md5(uniqid()).'.'.$file->getClientOriginalExtension();
+        return md5(uniqid()) . '.' . $file->getClientOriginalExtension();
     }
 
     /**

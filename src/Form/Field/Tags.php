@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Facades\Admin;
-use Casbin\Admin\Form\Field;
+use Ladmin\Facades\Admin;
+use Ladmin\Form\Field;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;

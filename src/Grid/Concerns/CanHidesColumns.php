@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
-use Casbin\Admin\Grid;
-use Casbin\Admin\Grid\Tools\ColumnSelector;
+use Ladmin\Grid;
+use Ladmin\Grid\Tools\ColumnSelector;
 use Illuminate\Support\Collection;
 
 trait CanHidesColumns

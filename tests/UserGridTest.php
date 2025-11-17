@@ -1,6 +1,6 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Administrator;
 use Tests\Models\Profile as ProfileModel;
 use Tests\Models\User as UserModel;
 
@@ -55,14 +55,14 @@ class UserGridTest extends TestCase
         if (!($users instanceof \Illuminate\Support\Collection)) {
             $users = collect([$users]);
         }
-    
+
         $users->each(function ($u) {
             $u->profile()->save(factory(\Tests\Models\Profile::class)->make());
             $u->tags()->saveMany(factory(\Tests\Models\Tag::class, 5)->make());
             $u->data = ['json' => ['field' => random_int(0, 50)]];
             $u->save();
         });
-    
+
         // Ensure exactly 20 usernames contain 'mi' for deterministic like-filter tests
         $users->take(20)->each(function ($u) {
             $u->username = $u->username . 'mi';
@@ -137,7 +137,7 @@ class UserGridTest extends TestCase
 
         $user = UserModel::find($id);
 
-        $this->visit('admin/users?id='.$id)
+        $this->visit('admin/users?id=' . $id)
             ->seeInElement('td', $user->username)
             ->seeInElement('td', $user->email)
             ->seeInElement('td', $user->mobile)
@@ -178,7 +178,7 @@ class UserGridTest extends TestCase
 
         $user = UserModel::with('profile')->find(rand(1, 50));
 
-        $this->visit('admin/users?email='.$user->email)
+        $this->visit('admin/users?email=' . $user->email)
             ->seeInElement('td', $user->username)
             ->seeInElement('td', $user->email)
             ->seeInElement('td', $user->mobile)
@@ -256,7 +256,7 @@ class UserGridTest extends TestCase
 
         $perPage = rand(1, 98);
 
-        $this->visit('admin/users?per_page='.$perPage)
+        $this->visit('admin/users?per_page=' . $perPage)
             ->seeInElement('select option[selected]', $perPage)
             ->assertCount($perPage + 1, $this->crawler()->filter('tr'));
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Support\Arr;
 
 class Editable extends AbstractDisplayer
@@ -56,16 +56,12 @@ class Editable extends AbstractDisplayer
     /**
      * Text type editable.
      */
-    public function text()
-    {
-    }
+    public function text() {}
 
     /**
      * Textarea type editable.
      */
-    public function textarea()
-    {
-    }
+    public function textarea() {}
 
     /**
      * Select type editable.
@@ -178,13 +174,13 @@ class Editable extends AbstractDisplayer
     {
         $this->options['name'] = $column = $this->getName();
 
-        $class = 'grid-editable-'.str_replace(['.', '#', '[', ']'], '-', $column);
+        $class = 'grid-editable-' . str_replace(['.', '#', '[', ']'], '-', $column);
 
         $this->buildEditableOptions(func_get_args());
 
         $options = json_encode($this->options);
 
-        $options = substr($options, 0, -1).<<<'STR'
+        $options = substr($options, 0, -1) . <<<'STR'
     ,
     "success":function(response, newValue){
         if (response.status){

@@ -11,7 +11,7 @@ Locate the file `app/Admin/bootstrap.php`. If the file does not exist, update `l
 
 <?php
 
-use Casbin\Admin\Form;
+use Ladmin\Form;
 
 Form::forget('map');
 Form::forget('editor');
@@ -39,7 +39,7 @@ Create a new field class `app/Admin/Extensions/PHPEditor.php`:
 
 namespace App\Admin\Extensions;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 
 class PHPEditor extends Field
 {
@@ -108,7 +108,7 @@ Finally, find the file `app/Admin/bootstrap.php`, if the file does not exist, up
 <?php
 
 use App\Admin\Extensions\PHPEditor;
-use Casbin\Admin\Form;
+use Ladmin\Form;
 
 Form::extend('php', PHPEditor::class);
 
@@ -136,7 +136,7 @@ Then Write Extension class `app/Admin/Extensions/Form/CKEditor.php`:
 
 namespace App\Admin\Extensions\Form;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 
 class CKEditor extends Field
 {
@@ -176,7 +176,7 @@ Add blade file `resources/views/admin/ckeditor.blade.php` for view `admin.ckedit
 Register this extension in `app/Admin/bootstrap.php`:
 
 ```php
-use Casbin\Admin\Form;
+use Ladmin\Form;
 use App\Admin\Extensions\Form\CKEditor;
 
 Form::extend('ckeditor', CKEditor::class);

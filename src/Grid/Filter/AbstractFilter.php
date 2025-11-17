@@ -1,15 +1,15 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter;
+namespace Ladmin\Grid\Filter;
 
-use Casbin\Admin\Grid\Filter;
-use Casbin\Admin\Grid\Filter\Presenter\Checkbox;
-use Casbin\Admin\Grid\Filter\Presenter\DateTime;
-use Casbin\Admin\Grid\Filter\Presenter\MultipleSelect;
-use Casbin\Admin\Grid\Filter\Presenter\Presenter;
-use Casbin\Admin\Grid\Filter\Presenter\Radio;
-use Casbin\Admin\Grid\Filter\Presenter\Select;
-use Casbin\Admin\Grid\Filter\Presenter\Text;
+use Ladmin\Grid\Filter;
+use Ladmin\Grid\Filter\Presenter\Checkbox;
+use Ladmin\Grid\Filter\Presenter\DateTime;
+use Ladmin\Grid\Filter\Presenter\MultipleSelect;
+use Ladmin\Grid\Filter\Presenter\Presenter;
+use Ladmin\Grid\Filter\Presenter\Radio;
+use Ladmin\Grid\Filter\Presenter\Select;
+use Ladmin\Grid\Filter\Presenter\Text;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
@@ -536,6 +536,6 @@ abstract class AbstractFilter
             return $this->presenter()->{$method}(...$params);
         }
 
-        throw new \Exception('Method "'.$method.'" not exists.');
+        throw new \Exception('Method "' . $method . '" not exists.');
     }
 }

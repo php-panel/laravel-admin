@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form\NestedForm;
-use Casbin\Admin\Widgets\Form as WidgetForm;
+use Ladmin\Form\NestedForm;
+use Ladmin\Widgets\Form as WidgetForm;
 
 class Table extends HasMany
 {
@@ -37,9 +37,9 @@ class Table extends HasMany
      */
     protected function buildRelatedForms()
     {
-//        if (is_null($this->form)) {
-//            return [];
-//        }
+        //        if (is_null($this->form)) {
+        //            return [];
+        //        }
 
         $forms = [];
 

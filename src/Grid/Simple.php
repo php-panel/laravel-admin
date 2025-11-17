@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid;
+namespace Ladmin\Grid;
 
-use Casbin\Admin\Grid;
+use Ladmin\Grid;
 use Illuminate\Contracts\Support\Renderable;
 
 /**

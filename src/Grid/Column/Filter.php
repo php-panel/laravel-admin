@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Column;
+namespace Ladmin\Grid\Column;
 
-use Casbin\Admin\Grid\Column;
-use Casbin\Admin\Grid\Model;
+use Ladmin\Grid\Column;
+use Ladmin\Grid\Model;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
 
@@ -61,10 +61,10 @@ class Filter implements Renderable
         $query = $request->query();
         Arr::forget($query, [$this->getColumnName(), '_pjax']);
 
-        $question = $request->getBaseUrl().$request->getPathInfo() == '/' ? '/?' : '?';
+        $question = $request->getBaseUrl() . $request->getPathInfo() == '/' ? '/?' : '?';
 
         return count($request->query()) > 0
-            ? $request->url().$question.http_build_query($query)
+            ? $request->url() . $question . http_build_query($query)
             : $request->fullUrl();
     }
 

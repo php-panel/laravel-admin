@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form;
+namespace Ladmin\Form;
 
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
@@ -153,7 +153,7 @@ class Tools implements Renderable
         $key = $this->form->getResourceId();
 
         if ($key) {
-            return $this->getListPath().'/'.$key;
+            return $this->getListPath() . '/' . $key;
         } else {
             return $this->getListPath();
         }
@@ -294,9 +294,7 @@ HTML;
      *
      * @deprecated
      */
-    public function disableBackButton()
-    {
-    }
+    public function disableBackButton() {}
 
     /**
      * Disable list button.
@@ -351,10 +349,10 @@ HTML;
         $output = $this->renderCustomTools($this->prepends);
 
         foreach ($this->tools as $tool) {
-            $renderMethod = 'render'.ucfirst($tool);
+            $renderMethod = 'render' . ucfirst($tool);
             $output .= $this->$renderMethod();
         }
 
-        return $output.$this->renderCustomTools($this->appends);
+        return $output . $this->renderCustomTools($this->appends);
     }
 }

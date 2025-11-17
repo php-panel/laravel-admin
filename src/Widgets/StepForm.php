@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
 class StepForm extends Form
 {
@@ -58,7 +58,7 @@ class StepForm extends Form
 
         $step = $this->steps[$index + 1];
 
-        $nextUrl = $this->url.'?'.http_build_query(compact('step'));
+        $nextUrl = $this->url . '?' . http_build_query(compact('step'));
 
         return redirect($nextUrl);
     }
@@ -184,6 +184,6 @@ class StepForm extends Form
      */
     public function data()
     {
-        return session()->get('steps.'.$this->current, []);
+        return session()->get('steps.' . $this->current, []);
     }
 }

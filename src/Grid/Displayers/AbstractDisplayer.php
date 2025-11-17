@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Grid;
-use Casbin\Admin\Grid\Column;
+use Ladmin\Grid;
+use Ladmin\Grid\Column;
 use Illuminate\Database\Eloquent\Model;
 
 abstract class AbstractDisplayer
@@ -123,8 +123,8 @@ abstract class AbstractDisplayer
     {
         $keys = collect(explode('.', $name ?: $this->getName()));
 
-        return $keys->shift().$keys->reduce(function ($carry, $val) {
-            return $carry."[$val]";
+        return $keys->shift() . $keys->reduce(function ($carry, $val) {
+            return $carry . "[$val]";
         });
     }
 

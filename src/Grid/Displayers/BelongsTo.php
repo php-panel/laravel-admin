@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Selectable;
+use Ladmin\Admin;
+use Ladmin\Grid\Selectable;
 
 class BelongsTo extends AbstractDisplayer
 {
@@ -38,7 +38,7 @@ class BelongsTo extends AbstractDisplayer
     {
         if (!class_exists($selectable) || !is_subclass_of($selectable, Selectable::class)) {
             throw new \InvalidArgumentException(
-                "[Class [{$selectable}] must be a sub class of Casbin\Admin\Grid\Selectable"
+                "[Class [{$selectable}] must be a sub class of Ladmin\Grid\Selectable"
             );
         }
 

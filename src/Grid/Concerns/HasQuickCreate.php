@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
-use Casbin\Admin\Grid\Tools\QuickCreate;
+use Ladmin\Grid\Tools\QuickCreate;
 
 trait HasQuickCreate
 {

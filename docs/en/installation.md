@@ -11,7 +11,7 @@ composer require encore/laravel-admin "1.5.*"
 
 Publish assets and config with command：
 ```
-php artisan vendor:publish --provider="Casbin\Admin\AdminServiceProvider"
+php artisan vendor:publish --provider="Ladmin\AdminServiceProvider"
 ```
 
 After runnung previous command you can find config file in `config/admin.php`, in this file you can change default install directory (```/app/Admin```), db connection or table names.

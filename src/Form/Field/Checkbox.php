@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
 use Illuminate\Contracts\Support\Arrayable;
 

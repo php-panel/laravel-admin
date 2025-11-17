@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Form;
+namespace Ladmin\Form;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form;
-use Casbin\Admin\Widgets\Form as WidgetForm;
+use Ladmin\Admin;
+use Ladmin\Form;
+use Ladmin\Widgets\Form as WidgetForm;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -92,7 +92,7 @@ class NestedForm
     protected $original = [];
 
     /**
-     * @var \Casbin\Admin\Form|\Casbin\Admin\Widgets\Form
+     * @var \Ladmin\Form|\Ladmin\Widgets\Form
      */
     protected $form;
 
@@ -142,7 +142,7 @@ class NestedForm
             return $key;
         }
 
-        return 'new_'.static::DEFAULT_KEY_NAME;
+        return 'new_' . static::DEFAULT_KEY_NAME;
     }
 
     /**
@@ -290,7 +290,7 @@ class NestedForm
                 $value = $field->prepare($value);
             }
 
-            if (($field instanceof \Casbin\Admin\Form\Field\Hidden) || $value != $field->original()) {
+            if (($field instanceof \Ladmin\Form\Field\Hidden) || $value != $field->original()) {
                 if (is_array($columns)) {
                     foreach ($columns as $name => $column) {
                         Arr::set($prepared, $column, $value[$name]);

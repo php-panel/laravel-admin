@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Facades\Admin as AdminFacade;
+use Ladmin\Admin;
+use Ladmin\Facades\Admin as AdminFacade;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use MatthiasMullie\Minify;
@@ -62,13 +62,13 @@ class MinifyCommand extends Command
         $this->generateManifest();
 
         $this->comment('JS and CSS are successfully minified:');
-        $this->line('  '.Admin::$min['js']);
-        $this->line('  '.Admin::$min['css']);
+        $this->line('  ' . Admin::$min['js']);
+        $this->line('  ' . Admin::$min['css']);
 
         $this->line('');
 
         $this->comment('Manifest successfully generated:');
-        $this->line('  '.Admin::$manifest);
+        $this->line('  ' . Admin::$manifest);
     }
 
     protected function loadExcepts()
@@ -86,9 +86,9 @@ class MinifyCommand extends Command
 
         $this->comment('Following files are cleared:');
 
-        $this->line('  '.Admin::$min['js']);
-        $this->line('  '.Admin::$min['css']);
-        $this->line('  '.Admin::$manifest);
+        $this->line('  ' . Admin::$min['js']);
+        $this->line('  ' . Admin::$min['css']);
+        $this->line('  ' . Admin::$manifest);
     }
 
     protected function minifyCSS()

@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Actions;
+namespace Ladmin\Actions;
 
 use Illuminate\Validation\ValidationException;
 
@@ -33,9 +33,15 @@ class Response
      * @var array
      */
     public $toastrMethods = [
-        'topCenter', 'topLeft', 'topRight',
-        'bottomLeft', 'bottomCenter', 'bottomRight',
-        'topFullWidth', 'bottomFullWidth', 'timeout',
+        'topCenter',
+        'topLeft',
+        'topRight',
+        'bottomLeft',
+        'bottomCenter',
+        'bottomRight',
+        'topFullWidth',
+        'bottomFullWidth',
+        'timeout',
     ];
 
     /**

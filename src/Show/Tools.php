@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Show;
+namespace Ladmin\Show;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;
@@ -164,7 +164,7 @@ class Tools implements Renderable
     {
         $key = $this->panel->getParent()->getModel()->getKey();
 
-        return $this->getListPath().'/'.$key.'/edit';
+        return $this->getListPath() . '/' . $key . '/edit';
     }
 
     /**
@@ -176,7 +176,7 @@ class Tools implements Renderable
     {
         $key = $this->panel->getParent()->getModel()->getKey();
 
-        return $this->getListPath().'/'.$key;
+        return $this->getListPath() . '/' . $key;
     }
 
     /**
@@ -316,10 +316,10 @@ HTML;
         $output = $this->renderCustomTools($this->prepends);
 
         foreach ($this->tools as $tool) {
-            $renderMethod = 'render'.ucfirst($tool);
+            $renderMethod = 'render' . ucfirst($tool);
             $output .= $this->$renderMethod();
         }
 
-        return $output.$this->renderCustomTools($this->appends);
+        return $output . $this->renderCustomTools($this->appends);
     }
 }

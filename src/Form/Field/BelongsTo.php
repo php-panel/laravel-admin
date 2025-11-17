@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 
 class BelongsTo extends Select
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Show;
+namespace Ladmin\Show;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;

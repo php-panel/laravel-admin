@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 
 trait CanFixHeader
 {

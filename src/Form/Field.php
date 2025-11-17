@@ -1,11 +1,11 @@
 <?php
 
-namespace Casbin\Admin\Form;
+namespace Ladmin\Form;
 
 use Closure;
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form;
-use Casbin\Admin\Widgets\Form as WidgetForm;
+use Ladmin\Admin;
+use Ladmin\Form;
+use Ladmin\Widgets\Form as WidgetForm;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
@@ -986,9 +986,9 @@ class Field implements Renderable
                 if (!array_key_exists($column, $input)) {
                     continue;
                 }
-                $input[$column.$key] = Arr::get($input, $column);
-                $rules[$column.$key] = $fieldRules;
-                $attributes[$column.$key] = $this->label."[$column]";
+                $input[$column . $key] = Arr::get($input, $column);
+                $rules[$column . $key] = $fieldRules;
+                $attributes[$column . $key] = $this->label . "[$column]";
             }
         }
 
@@ -1150,7 +1150,7 @@ class Field implements Renderable
      */
     public function getPlaceholder()
     {
-        return $this->placeholder ?: trans('admin.input').' '.$this->label;
+        return $this->placeholder ?: trans('admin.input') . ' ' . $this->label;
     }
 
     /**
@@ -1187,7 +1187,7 @@ class Field implements Renderable
         $html = [];
 
         foreach ($this->attributes as $name => $value) {
-            $html[] = $name.'="'.e($value).'"';
+            $html[] = $name . '="' . e($value) . '"';
         }
 
         return implode(' ', $html);
@@ -1284,13 +1284,13 @@ class Field implements Renderable
             $classes = [];
 
             foreach ($elementClass as $index => $class) {
-                $classes[$index] = '.'.(is_array($class) ? implode('.', $class) : $class);
+                $classes[$index] = '.' . (is_array($class) ? implode('.', $class) : $class);
             }
 
             return $classes;
         }
 
-        return '.'.implode('.', $elementClass);
+        return '.' . implode('.', $elementClass);
     }
 
     /**
@@ -1360,7 +1360,7 @@ class Field implements Renderable
      */
     protected function getGroupClass($default = false): string
     {
-        return ($default ? 'form-group ' : '').implode(' ', array_filter($this->groupClass));
+        return ($default ? 'form-group ' : '') . implode(' ', array_filter($this->groupClass));
     }
 
     /**
@@ -1450,7 +1450,7 @@ class Field implements Renderable
 
         $class = explode('\\', static::class);
 
-        return 'admin::form.'.strtolower(end($class));
+        return 'admin::form.' . strtolower(end($class));
     }
 
     /**
@@ -1522,7 +1522,7 @@ class Field implements Renderable
     /**
      * @param \Closure $callback
      *
-     * @return \Casbin\Admin\Form\Field
+     * @return \Ladmin\Form\Field
      */
     public function with(Closure $callback): self
     {

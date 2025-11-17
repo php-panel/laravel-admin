@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 use Illuminate\Console\GeneratorCommand;
 
@@ -46,10 +46,10 @@ class FormCommand extends GeneratorCommand
     protected function getStub()
     {
         if ($this->option('step')) {
-            return __DIR__.'/stubs/step-form.stub';
+            return __DIR__ . '/stubs/step-form.stub';
         }
 
-        return __DIR__.'/stubs/form.stub';
+        return __DIR__ . '/stubs/form.stub';
     }
 
     /**

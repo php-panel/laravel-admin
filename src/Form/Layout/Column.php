@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Copyright (c) 2019. Mallto.Co.Ltd.<mall-to.com> All rights reserved.
  */
 
-namespace Casbin\Admin\Form\Layout;
+namespace Ladmin\Form\Layout;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 use Illuminate\Support\Collection;
 
 class Column

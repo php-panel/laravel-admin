@@ -2,9 +2,9 @@
 
 namespace Tests\Controllers;
 
-use Casbin\Admin\Controllers\AdminController;
-use Casbin\Admin\Form;
-use Casbin\Admin\Grid;
+use Ladmin\Controllers\AdminController;
+use Ladmin\Form;
+use Ladmin\Grid;
 use Tests\Models\Image;
 
 class ImageController extends AdminController

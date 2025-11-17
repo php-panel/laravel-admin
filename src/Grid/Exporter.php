@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid;
+namespace Ladmin\Grid;
 
-use Casbin\Admin\Grid;
-use Casbin\Admin\Grid\Exporters\CsvExporter;
+use Ladmin\Grid;
+use Ladmin\Grid\Exporters\CsvExporter;
 
 class Exporter
 {

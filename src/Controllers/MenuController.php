@@ -1,13 +1,13 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
-use Casbin\Admin\Form;
-use Casbin\Admin\Layout\Column;
-use Casbin\Admin\Layout\Content;
-use Casbin\Admin\Layout\Row;
-use Casbin\Admin\Tree;
-use Casbin\Admin\Widgets\Box;
+use Ladmin\Form;
+use Ladmin\Layout\Column;
+use Ladmin\Layout\Content;
+use Ladmin\Layout\Row;
+use Ladmin\Tree;
+use Ladmin\Widgets\Box;
 use Illuminate\Routing\Controller;
 
 class MenuController extends Controller
@@ -30,7 +30,7 @@ class MenuController extends Controller
                 $row->column(6, $this->treeView()->render());
 
                 $row->column(6, function (Column $column) {
-                    $form = new \Casbin\Admin\Widgets\Form();
+                    $form = new \Ladmin\Widgets\Form();
                     $form->action(admin_url('auth/menu'));
 
                     $menuModel = config('admin.database.menu_model');
@@ -65,7 +65,7 @@ class MenuController extends Controller
     }
 
     /**
-     * @return \Casbin\Admin\Tree
+     * @return \Ladmin\Tree
      */
     protected function treeView()
     {

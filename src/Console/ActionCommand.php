@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;
@@ -89,14 +89,14 @@ CODE;
     public function getStub()
     {
         if ($this->option('grid-batch')) {
-            return __DIR__.'/stubs/grid-batch-action.stub';
+            return __DIR__ . '/stubs/grid-batch-action.stub';
         }
 
         if ($this->option('grid-row')) {
-            return __DIR__.'/stubs/grid-row-action.stub';
+            return __DIR__ . '/stubs/grid-row-action.stub';
         }
 
-        return __DIR__.'/stubs/action.stub';
+        return __DIR__ . '/stubs/action.stub';
     }
 
     /**

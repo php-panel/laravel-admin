@@ -1,6 +1,6 @@
 <?php
 
-use Casbin\Admin\Auth\Database\Administrator;
+use Ladmin\Auth\Database\Administrator;
 
 class IndexTest extends TestCase
 {
@@ -28,7 +28,7 @@ class IndexTest extends TestCase
 
             ->see('Dependencies')
             ->see('php')
-//            ->see('>=7.0.0')
+            //            ->see('>=7.0.0')
             ->see('laravel/framework');
     }
 

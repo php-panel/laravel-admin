@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Actions;
+namespace Ladmin\Actions;
 
 use Illuminate\Support\Arr;
 

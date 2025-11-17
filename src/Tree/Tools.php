@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Tree;
+namespace Ladmin\Tree;
 
-use Casbin\Admin\Tree;
+use Ladmin\Tree;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Collection;

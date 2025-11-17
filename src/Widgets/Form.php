@@ -1,12 +1,12 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
 use Closure;
-use Casbin\Admin\Facades\Admin;
-use Casbin\Admin\Form as BaseForm;
-use Casbin\Admin\Form\Field;
-use Casbin\Admin\Layout\Content;
+use Ladmin\Facades\Admin;
+use Ladmin\Form as BaseForm;
+use Ladmin\Form\Field;
+use Ladmin\Layout\Content;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -217,7 +217,7 @@ class Form implements Renderable
     protected function initFormAttributes()
     {
         $this->attributes = [
-            'id'             => 'widget-form-'.uniqid(),
+            'id'             => 'widget-form-' . uniqid(),
             'method'         => 'POST',
             'action'         => '',
             'class'          => 'form-horizontal',

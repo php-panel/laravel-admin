@@ -1,12 +1,12 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form;
-use Casbin\Admin\Form\Field;
-use Casbin\Admin\Form\NestedForm;
-use Casbin\Admin\Widgets\Form as WidgetForm;
+use Ladmin\Admin;
+use Ladmin\Form;
+use Ladmin\Form\Field;
+use Ladmin\Form\NestedForm;
+use Ladmin\Widgets\Form as WidgetForm;
 use Illuminate\Database\Eloquent\Relations\HasMany as Relation;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Arr;
@@ -133,7 +133,7 @@ class HasMany extends Field
 
             if (is_array($column)) {
                 foreach ($column as $key => $name) {
-                    $rules[$name.$key] = $fieldRules;
+                    $rules[$name . $key] = $fieldRules;
                 }
 
                 $this->resetInputKey($input, $column);
@@ -159,8 +159,10 @@ class HasMany extends Field
         foreach ($rules as $column => $rule) {
             foreach (array_keys($input[$this->column]) as $key) {
                 $newRules["{$this->column}.$key.$column"] = $rule;
-                if (isset($input[$this->column][$key][$column]) &&
-                    is_array($input[$this->column][$key][$column])) {
+                if (
+                    isset($input[$this->column][$key][$column]) &&
+                    is_array($input[$this->column][$key][$column])
+                ) {
                     foreach ($input[$this->column][$key][$column] as $vkey => $value) {
                         $newInput["{$this->column}.$key.{$column}$vkey"] = $value;
                     }
@@ -218,7 +220,7 @@ class HasMany extends Field
 
         if (is_array($column)) {
             foreach ($column as $index => $col) {
-                $new[$col.$index] = $col;
+                $new[$col . $index] = $col;
             }
         }
 
@@ -230,7 +232,7 @@ class HasMany extends Field
             } else {
                 foreach ($new as $k => $val) {
                     if (Str::endsWith($key, ".$k")) {
-                        $attributes[$key] = $label."[$val]";
+                        $attributes[$key] = $label . "[$val]";
                     }
                 }
             }
@@ -289,7 +291,7 @@ class HasMany extends Field
                  *
                  * I don't know why a form need range input? Only can imagine is for range search....
                  */
-                $newKey = $name.$column[$name];
+                $newKey = $name . $column[$name];
 
                 /*
                  * set new key
@@ -463,7 +465,7 @@ class HasMany extends Field
      */
     protected function setupScript($script)
     {
-        $method = 'setupScriptFor'.ucfirst($this->viewMode).'View';
+        $method = 'setupScriptFor' . ucfirst($this->viewMode) . 'View';
 
         call_user_func([$this, $method], $script);
     }
@@ -717,7 +719,7 @@ EOT;
         }, '');
 
         /* Build cell with hidden elements */
-        $template .= '<td class="hidden">'.implode('', $hidden).'</td>';
+        $template .= '<td class="hidden">' . implode('', $hidden) . '</td>';
 
         $this->setupScript(implode("\r\n", $scripts));
 

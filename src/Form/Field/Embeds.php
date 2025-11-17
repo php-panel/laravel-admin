@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form\EmbeddedForm;
-use Casbin\Admin\Form\Field;
-use Casbin\Admin\Widgets\Form as WidgetForm;
+use Ladmin\Form\EmbeddedForm;
+use Ladmin\Form\Field;
+use Ladmin\Widgets\Form as WidgetForm;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
@@ -147,7 +147,7 @@ class Embeds extends Field
 
         if (is_array($column)) {
             foreach ($column as $index => $col) {
-                $new[$col.$index] = $col;
+                $new[$col . $index] = $col;
             }
         }
 
@@ -159,7 +159,7 @@ class Embeds extends Field
             } else {
                 foreach ($new as $k => $val) {
                     if (Str::endsWith($key, ".$k")) {
-                        $attributes[$key] = $label."[$val]";
+                        $attributes[$key] = $label . "[$val]";
                     }
                 }
             }
@@ -185,7 +185,7 @@ class Embeds extends Field
                 continue;
             }
 
-            $newKey = $key.$column[$key];
+            $newKey = $key . $column[$key];
 
             /*
              * set new key

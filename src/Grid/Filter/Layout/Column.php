@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter\Layout;
+namespace Ladmin\Grid\Filter\Layout;
 
-use Casbin\Admin\Grid\Filter\AbstractFilter;
+use Ladmin\Grid\Filter\AbstractFilter;
 use Illuminate\Support\Collection;
 
 class Column

@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Auth;
+namespace Ladmin\Auth;
 
-use Casbin\Admin\Facades\Admin;
-use Casbin\Admin\Middleware\Pjax;
+use Ladmin\Facades\Admin;
+use Ladmin\Middleware\Pjax;
 
 class Permission
 {

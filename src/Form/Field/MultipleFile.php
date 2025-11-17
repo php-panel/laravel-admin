@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Form;
-use Casbin\Admin\Form\Field;
+use Ladmin\Form;
+use Ladmin\Form\Field;
 use Illuminate\Support\Arr;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
@@ -96,8 +96,8 @@ class MultipleFile extends Field
         $rules = $input = [];
 
         foreach ($value as $key => $file) {
-            $rules[$this->column.$key] = $this->getRules();
-            $input[$this->column.$key] = $file;
+            $rules[$this->column . $key] = $this->getRules();
+            $input[$this->column . $key] = $file;
         }
 
         return [$rules, $input];

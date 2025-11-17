@@ -1,18 +1,18 @@
 <?php
 
-namespace Casbin\Admin;
+namespace Ladmin;
 
 use Closure;
-use Casbin\Admin\Exception\Handler;
-use Casbin\Admin\Form\Builder;
-use Casbin\Admin\Form\Concerns\HandleCascadeFields;
-use Casbin\Admin\Form\Concerns\HasFields;
-use Casbin\Admin\Form\Concerns\HasHooks;
-use Casbin\Admin\Form\Field;
-use Casbin\Admin\Form\Layout\Layout;
-use Casbin\Admin\Form\Row;
-use Casbin\Admin\Form\Tab;
-use Casbin\Admin\Traits\ShouldSnakeAttributes;
+use Ladmin\Exception\Handler;
+use Ladmin\Form\Builder;
+use Ladmin\Form\Concerns\HandleCascadeFields;
+use Ladmin\Form\Concerns\HasFields;
+use Ladmin\Form\Concerns\HasHooks;
+use Ladmin\Form\Field;
+use Ladmin\Form\Layout\Layout;
+use Ladmin\Form\Row;
+use Ladmin\Form\Tab;
+use Ladmin\Traits\ShouldSnakeAttributes;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Database\Eloquent\Model;
@@ -481,7 +481,7 @@ class Form implements Renderable
 
         foreach ($inputs as $column => $value) {
             if ((method_exists($this->model, $column) ||
-                method_exists($this->model, $column = Str::camel($column))) &&
+                    method_exists($this->model, $column = Str::camel($column))) &&
                 !method_exists(Model::class, $column)
             ) {
                 $relation = call_user_func([$this->model, $column]);
@@ -601,13 +601,13 @@ class Form implements Renderable
     {
         if (request('after-save') == 1) {
             // continue editing
-            $url = rtrim($resourcesPath, '/')."/{$key}/edit";
+            $url = rtrim($resourcesPath, '/') . "/{$key}/edit";
         } elseif (request('after-save') == 2) {
             // continue creating
-            $url = rtrim($resourcesPath, '/').'/create';
+            $url = rtrim($resourcesPath, '/') . '/create';
         } elseif (request('after-save') == 3) {
             // view resource
-            $url = rtrim($resourcesPath, '/')."/{$key}";
+            $url = rtrim($resourcesPath, '/') . "/{$key}";
         } else {
             $url = request(Builder::PREVIOUS_URL_KEY) ?: $resourcesPath;
         }
@@ -903,7 +903,8 @@ class Form implements Renderable
     {
         foreach ((array) $columns as $column) {
             if ((!$containsDot && Str::contains($column, '.')) ||
-                ($containsDot && !Str::contains($column, '.'))) {
+                ($containsDot && !Str::contains($column, '.'))
+            ) {
                 return true;
             }
         }
@@ -1179,13 +1180,15 @@ class Form implements Renderable
             if (Str::contains($column, '.')) {
                 list($relation) = explode('.', $column);
 
-                if (method_exists($this->model, $relation) &&
+                if (
+                    method_exists($this->model, $relation) &&
                     !method_exists(Model::class, $relation) &&
                     $this->model->$relation() instanceof Relations\Relation
                 ) {
                     $relations[] = $relation;
                 }
-            } elseif (method_exists($this->model, $column) &&
+            } elseif (
+                method_exists($this->model, $column) &&
                 !method_exists(Model::class, $column)
             ) {
                 $relations[] = $column;
@@ -1421,7 +1424,7 @@ class Form implements Renderable
      *
      * @param Closure $callback
      *
-     * @return \Casbin\Admin\Form\Footer
+     * @return \Ladmin\Form\Footer
      */
     public function footer(Closure $callback = null)
     {

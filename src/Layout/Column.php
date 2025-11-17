@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Layout;
+namespace Ladmin\Layout;
 
-use Casbin\Admin\Grid;
+use Ladmin\Grid;
 use Illuminate\Contracts\Support\Renderable;
 
 class Column implements Buildable

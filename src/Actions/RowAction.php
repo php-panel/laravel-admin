@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Actions;
+namespace Ladmin\Actions;
 
-use Casbin\Admin\Grid\Column;
+use Ladmin\Grid\Column;
 use Illuminate\Http\Request;
 
 abstract class RowAction extends GridAction
@@ -99,9 +99,7 @@ abstract class RowAction extends GridAction
     /**
      * @return string
      */
-    public function href()
-    {
-    }
+    public function href() {}
 
     /**
      * @param Request $request
@@ -123,9 +121,7 @@ abstract class RowAction extends GridAction
         return $modelClass::findOrFail($key);
     }
 
-    public function display($value)
-    {
-    }
+    public function display($value) {}
 
     /**
      * Render row action.

@@ -26,12 +26,12 @@ class TestCase extends BaseTestCase
 
         $app->booting(function () {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('Admin', \Casbin\Admin\Facades\Admin::class);
+            $loader->alias('Admin', \Ladmin\Facades\Admin::class);
         });
 
         $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
-        $app->register('Casbin\Admin\AdminServiceProvider');
+        $app->register('Ladmin\AdminServiceProvider');
 
         return $app;
     }
@@ -60,7 +60,7 @@ class TestCase extends BaseTestCase
 
         // Publish assets only once across the entire test run to avoid repeated heavy I/O
         if (!self::$publishedAssets) {
-            $this->artisan('vendor:publish', ['--provider' => 'Casbin\Admin\AdminServiceProvider']);
+            $this->artisan('vendor:publish', ['--provider' => 'Ladmin\AdminServiceProvider']);
             self::$publishedAssets = true;
         }
 
@@ -78,9 +78,9 @@ class TestCase extends BaseTestCase
 
         require_once __DIR__ . '/seeds/factory.php';
 
-        //        \Casbin\Admin\Admin::$css = [];
-        //        \Casbin\Admin\Admin::$js = [];
-        //        \Casbin\Admin\Admin::$script = [];
+        //        \Ladmin\Admin::$css = [];
+        //        \Ladmin\Admin::$js = [];
+        //        \Ladmin\Admin::$script = [];
     }
 
     protected function tearDown(): void

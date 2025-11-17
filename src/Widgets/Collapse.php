@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Widgets;
+namespace Ladmin\Widgets;
 
 use Illuminate\Contracts\Support\Renderable;
 
@@ -21,7 +21,7 @@ class Collapse extends Widget implements Renderable
      */
     public function __construct()
     {
-        $this->id('accordion-'.uniqid());
+        $this->id('accordion-' . uniqid());
         $this->class('box-group');
         $this->style('margin-bottom: 20px');
     }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
 use Closure;
-use Casbin\Admin\Grid\Filter;
+use Ladmin\Grid\Filter;
 use Illuminate\Support\Collection;
 
 trait HasFilter
@@ -11,7 +11,7 @@ trait HasFilter
     /**
      * The grid Filter.
      *
-     * @var \Casbin\Admin\Grid\Filter
+     * @var \Ladmin\Grid\Filter
      */
     protected $filter;
 

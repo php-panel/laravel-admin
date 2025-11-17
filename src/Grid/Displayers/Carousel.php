@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Widgets\Carousel as CarouselWidget;
+use Ladmin\Widgets\Carousel as CarouselWidget;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Facades\Storage;
 
@@ -24,7 +24,7 @@ class Carousel extends AbstractDisplayer
             if (url()->isValidUrl($path) || strpos($path, 'data:image') === 0) {
                 $image = $path;
             } elseif ($server) {
-                $image = rtrim($server, '/').'/'.ltrim($path, '/');
+                $image = rtrim($server, '/') . '/' . ltrim($path, '/');
             } else {
                 $image = Storage::disk(config('admin.upload.disk'))->url($path);
             }

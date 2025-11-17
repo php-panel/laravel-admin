@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
-use Casbin\Admin\Auth\Database\OperationLog;
-use Casbin\Admin\Grid;
+use Ladmin\Auth\Database\OperationLog;
+use Ladmin\Grid;
 use Illuminate\Support\Arr;
 
 class LogController extends AdminController
@@ -41,7 +41,7 @@ class LogController extends AdminController
                 return '<code>{}</code>';
             }
 
-            return '<pre>'.json_encode($input, JSON_PRETTY_PRINT | JSON_HEX_TAG).'</pre>';
+            return '<pre>' . json_encode($input, JSON_PRETTY_PRINT | JSON_HEX_TAG) . '</pre>';
         });
 
         $grid->column('created_at', trans('admin.created_at'));

@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 
 class Actions extends AbstractDisplayer
 {
@@ -180,7 +180,7 @@ class Actions extends AbstractDisplayer
         $actions = $this->prepends;
 
         foreach ($this->actions as $action) {
-            $method = 'render'.ucfirst($action);
+            $method = 'render' . ucfirst($action);
             array_push($actions, $this->{$method}());
         }
 

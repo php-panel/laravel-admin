@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Actions\Interactor;
+namespace Ladmin\Actions\Interactor;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 
 class Dialog extends Interactor
 {

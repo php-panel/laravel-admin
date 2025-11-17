@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
 use Closure;
-use Casbin\Admin\Grid\Tools\Footer;
+use Ladmin\Grid\Tools\Footer;
 
 trait HasFooter
 {

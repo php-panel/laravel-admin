@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid\Selectable;
+use Ladmin\Admin;
+use Ladmin\Grid\Selectable;
 
 trait BelongsToRelation
 {
@@ -37,7 +37,7 @@ trait BelongsToRelation
     {
         if (!class_exists($selectable) || !is_subclass_of($selectable, Selectable::class)) {
             throw new \InvalidArgumentException(
-                "[Class [{$selectable}] must be a sub class of Casbin\Admin\Grid\Selectable"
+                "[Class [{$selectable}] must be a sub class of Ladmin\Grid\Selectable"
             );
         }
 
@@ -143,7 +143,7 @@ STYLE;
     }
 
     /**
-     * @return \Casbin\Admin\Grid
+     * @return \Ladmin\Grid
      */
     protected function makeGrid()
     {

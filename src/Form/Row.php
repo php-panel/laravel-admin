@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form;
+namespace Ladmin\Form;
 
-use Casbin\Admin\Form;
+use Ladmin\Form;
 use Illuminate\Contracts\Support\Renderable;
 
 class Row implements Renderable

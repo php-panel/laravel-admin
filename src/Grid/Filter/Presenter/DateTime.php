@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter\Presenter;
+namespace Ladmin\Grid\Filter\Presenter;
 
-use Casbin\Admin\Admin;
+use Ladmin\Admin;
 use Illuminate\Support\Arr;
 
 class DateTime extends Presenter
@@ -42,7 +42,7 @@ class DateTime extends Presenter
 
     protected function prepare()
     {
-        $script = "$('#{$this->filter->getId()}').datetimepicker(".json_encode($this->options).');';
+        $script = "$('#{$this->filter->getId()}').datetimepicker(" . json_encode($this->options) . ');';
 
         Admin::script($script);
     }

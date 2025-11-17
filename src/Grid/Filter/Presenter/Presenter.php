@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter\Presenter;
+namespace Ladmin\Grid\Filter\Presenter;
 
-use Casbin\Admin\Grid\Filter\AbstractFilter;
+use Ladmin\Grid\Filter\AbstractFilter;
 
 abstract class Presenter
 {
@@ -30,7 +30,7 @@ abstract class Presenter
     {
         $reflect = new \ReflectionClass(get_called_class());
 
-        return 'admin::filter.'.strtolower($reflect->getShortName());
+        return 'admin::filter.' . strtolower($reflect->getShortName());
     }
 
     /**

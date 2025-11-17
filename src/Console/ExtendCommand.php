@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -140,17 +140,17 @@ TREE;
 
         // copy files
         $this->copy([
-            __DIR__.'/stubs/extension/view.stub'       => 'resources/views/index.blade.php',
-            __DIR__.'/stubs/extension/.gitignore.stub' => '.gitignore',
-            __DIR__.'/stubs/extension/README.md.stub'  => 'README.md',
-            __DIR__.'/stubs/extension/LICENSE.stub'    => 'LICENSE',
+            __DIR__ . '/stubs/extension/view.stub'       => 'resources/views/index.blade.php',
+            __DIR__ . '/stubs/extension/.gitignore.stub' => '.gitignore',
+            __DIR__ . '/stubs/extension/README.md.stub'  => 'README.md',
+            __DIR__ . '/stubs/extension/LICENSE.stub'    => 'LICENSE',
         ]);
 
         // make composer.json
         $composerContents = str_replace(
             [':package', ':namespace', ':class_name'],
-            [$this->package, str_replace('\\', '\\\\', $this->namespace).'\\\\', $this->className],
-            file_get_contents(__DIR__.'/stubs/extension/composer.json.stub')
+            [$this->package, str_replace('\\', '\\\\', $this->namespace) . '\\\\', $this->className],
+            file_get_contents(__DIR__ . '/stubs/extension/composer.json.stub')
         );
         $this->putFile('composer.json', $composerContents);
 
@@ -158,7 +158,7 @@ TREE;
         $classContents = str_replace(
             [':namespace', ':class_name', ':title', ':path', ':base_package'],
             [$this->namespace, $this->className, Str::title($this->className), basename($this->package), basename($this->package)],
-            file_get_contents(__DIR__.'/stubs/extension/extension.stub')
+            file_get_contents(__DIR__ . '/stubs/extension/extension.stub')
         );
         $this->putFile("src/{$this->className}.php", $classContents);
 
@@ -166,7 +166,7 @@ TREE;
         $providerContents = str_replace(
             [':namespace', ':class_name', ':base_package', ':package'],
             [$this->namespace, $this->className, basename($this->package), $this->package],
-            file_get_contents(__DIR__.'/stubs/extension/service-provider.stub')
+            file_get_contents(__DIR__ . '/stubs/extension/service-provider.stub')
         );
         $this->putFile("src/{$this->className}ServiceProvider.php", $providerContents);
 
@@ -174,7 +174,7 @@ TREE;
         $controllerContent = str_replace(
             [':namespace', ':class_name', ':base_package'],
             [$this->namespace, $this->className, basename($this->package)],
-            file_get_contents(__DIR__.'/stubs/extension/controller.stub')
+            file_get_contents(__DIR__ . '/stubs/extension/controller.stub')
         );
         $this->putFile("src/Http/Controllers/{$this->className}Controller.php", $controllerContent);
 
@@ -182,7 +182,7 @@ TREE;
         $routesContent = str_replace(
             [':namespace', ':class_name', ':path'],
             [$this->namespace, $this->className, basename($this->package)],
-            file_get_contents(__DIR__.'/stubs/extension/routes.stub')
+            file_get_contents(__DIR__ . '/stubs/extension/routes.stub')
         );
         $this->putFile('routes/web.php', $routesContent);
     }
@@ -197,7 +197,7 @@ TREE;
         if (!$namespace = $this->option('namespace')) {
             list($vendor, $name) = explode('/', $this->package);
 
-            $default = str_replace(['-', '-'], '', Str::title($vendor).'\\'.Str::title($name));
+            $default = str_replace(['-', '-'], '', Str::title($vendor) . '\\' . Str::title($name));
 
             $namespace = $this->ask('Root namespace', $default);
         }
@@ -220,7 +220,7 @@ TREE;
      */
     protected function makeDirs()
     {
-        $this->basePath = rtrim($this->extensionDir, '/').'/'.ltrim($this->package, '/');
+        $this->basePath = rtrim($this->extensionDir, '/') . '/' . ltrim($this->package, '/');
 
         $this->makeDir($this->dirs);
     }
@@ -252,7 +252,7 @@ TREE;
             return rtrim($this->basePath, '/');
         }
 
-        return rtrim($this->basePath, '/').'/'.ltrim($path, '/');
+        return rtrim($this->basePath, '/') . '/' . ltrim($path, '/');
     }
 
     /**

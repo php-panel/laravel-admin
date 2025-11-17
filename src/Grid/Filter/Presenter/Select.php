@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter\Presenter;
+namespace Ladmin\Grid\Filter\Presenter;
 
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
@@ -112,7 +112,8 @@ SCRIPT;
      */
     public function model($model, $idField = 'id', $textField = 'name')
     {
-        if (!class_exists($model)
+        if (
+            !class_exists($model)
             || !in_array(Model::class, class_parents($model))
         ) {
             throw new \InvalidArgumentException("[$model] must be a valid model class");

@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Grid;
+use Ladmin\Admin;
+use Ladmin\Grid;
 
 class ExportButton extends AbstractTool
 {
@@ -79,7 +79,7 @@ SCRIPT;
     </button>
     <ul class="dropdown-menu" role="menu">
         <li><a href="{$this->grid->getExportUrl('all')}" target="_blank">{$trans['all']}</a></li>
-        <li><a href="{$this->grid->getExportUrl('page', $page)}" target="_blank">{$trans['current_page']}</a></li>
+        <li><a href="{$this->grid->getExportUrl('page',$page)}" target="_blank">{$trans['current_page']}</a></li>
         <li><a href="{$this->grid->getExportUrl('selected', '__rows__')}" target="_blank" class='{$this->grid->getExportSelectedName()}'>{$trans['selected_rows']}</a></li>
     </ul>
 </div>

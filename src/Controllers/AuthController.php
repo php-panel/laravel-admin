@@ -1,10 +1,10 @@
 <?php
 
-namespace Casbin\Admin\Controllers;
+namespace Ladmin\Controllers;
 
-use Casbin\Admin\Facades\Admin;
-use Casbin\Admin\Form;
-use Casbin\Admin\Layout\Content;
+use Ladmin\Facades\Admin;
+use Ladmin\Form;
+use Ladmin\Layout\Content;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;

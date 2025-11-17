@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Database\Eloquent\Model;
@@ -181,7 +181,7 @@ class MakeCommand extends GeneratorCommand
     {
         $indent = str_repeat(' ', 8);
 
-        return rtrim($indent.preg_replace("/\r\n/", "\r\n{$indent}", $code));
+        return rtrim($indent . preg_replace("/\r\n/", "\r\n{$indent}", $code));
     }
 
     /**
@@ -196,10 +196,10 @@ class MakeCommand extends GeneratorCommand
         }
 
         if ($this->modelName) {
-            return __DIR__.'/stubs/controller.stub';
+            return __DIR__ . '/stubs/controller.stub';
         }
 
-        return __DIR__.'/stubs/blank.stub';
+        return __DIR__ . '/stubs/blank.stub';
     }
 
     /**

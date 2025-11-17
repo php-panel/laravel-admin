@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid;
+namespace Ladmin\Grid;
 
-use Casbin\Admin\Grid;
-use Casbin\Admin\Middleware\Pjax;
+use Ladmin\Grid;
+use Ladmin\Middleware\Pjax;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -584,7 +584,7 @@ class Model
 
             $this->queries->push([
                 'method'    => 'select',
-                'arguments' => [$this->model->getTable().'.*'],
+                'arguments' => [$this->model->getTable() . '.*'],
             ]);
 
             $this->queries->push([
@@ -597,7 +597,7 @@ class Model
             $this->queries->push([
                 'method'    => 'orderBy',
                 'arguments' => [
-                    $relation->getRelated()->getTable().'.'.$relationColumn,
+                    $relation->getRelated()->getTable() . '.' . $relationColumn,
                     $this->sort['type'],
                 ],
             ]);
@@ -638,7 +638,7 @@ class Model
                 $relatedTable,
                 $relation->{$foreignKeyMethod}(),
                 '=',
-                $relatedTable.'.'.$relation->getRelated()->getKeyName(),
+                $relatedTable . '.' . $relation->getRelated()->getKeyName(),
             ];
         }
 

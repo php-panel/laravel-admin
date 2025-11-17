@@ -19,7 +19,7 @@ Open `app/Providers/AppServiceProvider.php`, and call the `Config::load()` metho
 
 namespace App\Providers;
 
-use Casbin\Admin\Config\Config;
+use Ladmin\Config\Config;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

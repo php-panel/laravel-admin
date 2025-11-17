@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Layout;
+namespace Ladmin\Layout;
 
 use Illuminate\Contracts\Support\Renderable;
 
@@ -90,7 +90,7 @@ class Row implements Buildable, Renderable
     {
         $class = $this->class;
         $class[] = 'row';
-        echo '<div class="'.implode(' ', $class).'">';
+        echo '<div class="' . implode(' ', $class) . '">';
     }
 
     /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Column;
+namespace Ladmin\Grid\Column;
 
-use Casbin\Admin\Grid\Displayers;
+use Ladmin\Grid\Displayers;
 
 trait InlineEditing
 {

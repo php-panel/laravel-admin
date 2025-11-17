@@ -1,11 +1,11 @@
 <?php
 
-namespace Casbin\Admin\Grid\Column;
+namespace Ladmin\Grid\Column;
 
 use Carbon\Carbon;
-use Casbin\Admin\Grid\Column;
-use Casbin\Admin\Grid\Displayers;
-use Casbin\Admin\Grid\Model;
+use Ladmin\Grid\Column;
+use Ladmin\Grid\Displayers;
+use Ladmin\Grid\Model;
 use Illuminate\Support\Arr;
 
 /**

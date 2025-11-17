@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Console;
+namespace Ladmin\Console;
 
 class ControllerCommand extends MakeCommand
 {
@@ -39,6 +39,6 @@ class ControllerCommand extends MakeCommand
     {
         $name = (new \ReflectionClass($this->modelName))->getShortName();
 
-        return $name.'Controller';
+        return $name . 'Controller';
     }
 }

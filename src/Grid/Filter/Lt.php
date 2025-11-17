@@ -1,6 +1,6 @@
 <?php
 
-namespace Casbin\Admin\Grid\Filter;
+namespace Ladmin\Grid\Filter;
 
 use Illuminate\Support\Arr;
 

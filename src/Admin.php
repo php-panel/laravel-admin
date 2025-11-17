@@ -1,13 +1,13 @@
 <?php
 
-namespace Casbin\Admin;
+namespace Ladmin;
 
 use Closure;
-use Casbin\Admin\Auth\Database\Menu;
-use Casbin\Admin\Controllers\AuthController;
-use Casbin\Admin\Layout\Content;
-use Casbin\Admin\Traits\HasAssets;
-use Casbin\Admin\Widgets\Navbar;
+use Ladmin\Auth\Database\Menu;
+use Ladmin\Controllers\AuthController;
+use Ladmin\Layout\Content;
+use Ladmin\Traits\HasAssets;
+use Ladmin\Widgets\Navbar;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -76,7 +76,7 @@ class Admin
      * @param $model
      * @param Closure $callable
      *
-     * @return \Casbin\Admin\Grid
+     * @return \Ladmin\Grid
      *
      * @deprecated since v1.6.1
      */
@@ -89,7 +89,7 @@ class Admin
      * @param $model
      * @param Closure $callable
      *
-     * @return \Casbin\Admin\Form
+     * @return \Ladmin\Form
      *
      *  @deprecated since v1.6.1
      */
@@ -104,7 +104,7 @@ class Admin
      * @param $model
      * @param Closure|null $callable
      *
-     * @return \Casbin\Admin\Tree
+     * @return \Ladmin\Tree
      */
     public function tree($model, Closure $callable = null)
     {
@@ -129,7 +129,7 @@ class Admin
     /**
      * @param Closure $callable
      *
-     * @return \Casbin\Admin\Layout\Content
+     * @return \Ladmin\Layout\Content
      *
      * @deprecated since v1.6.1
      */
@@ -276,7 +276,7 @@ class Admin
     /**
      * Get navbar object.
      *
-     * @return \Casbin\Admin\Widgets\Navbar
+     * @return \Ladmin\Widgets\Navbar
      */
     public function getNavbar()
     {
@@ -314,7 +314,7 @@ class Admin
         app('router')->group($attributes, function ($router) {
 
             /* @var \Illuminate\Support\Facades\Route $router */
-            $router->namespace('\Casbin\Admin\Controllers')->group(function ($router) {
+            $router->namespace('\Ladmin\Controllers')->group(function ($router) {
 
                 /* @var \Illuminate\Routing\Router $router */
                 $router->resource('auth/users', 'UserController')->names('admin.auth.users');
@@ -332,11 +332,11 @@ class Admin
             $authController = config('admin.auth.controller', AuthController::class);
 
             /* @var \Illuminate\Routing\Router $router */
-            $router->get('auth/login', $authController.'@getLogin')->name('admin.login');
-            $router->post('auth/login', $authController.'@postLogin');
-            $router->get('auth/logout', $authController.'@getLogout')->name('admin.logout');
-            $router->get('auth/setting', $authController.'@getSetting')->name('admin.setting');
-            $router->put('auth/setting', $authController.'@putSetting');
+            $router->get('auth/login', $authController . '@getLogin')->name('admin.login');
+            $router->post('auth/login', $authController . '@postLogin');
+            $router->get('auth/logout', $authController . '@getLogout')->name('admin.logout');
+            $router->get('auth/setting', $authController . '@getSetting')->name('admin.setting');
+            $router->put('auth/setting', $authController . '@putSetting');
         });
     }
 

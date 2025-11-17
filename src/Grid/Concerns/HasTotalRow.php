@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Grid\Concerns;
+namespace Ladmin\Grid\Concerns;
 
 use Closure;
-use Casbin\Admin\Grid\Tools\TotalRow;
+use Ladmin\Grid\Tools\TotalRow;
 
 trait HasTotalRow
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form\Field;
+use Ladmin\Admin;
+use Ladmin\Form\Field;
 
 /**
  * @mixin Field
@@ -75,7 +75,7 @@ trait HasValuePicker
             ->attribute('id', $this->id)
             ->attribute('name', $this->elementName ?: $this->formatName($this->column))
             ->attribute('value', old($this->elementName ?: $this->column, $this->value()))
-            ->attribute('class', 'form-control '.$this->getElementClassString())
+            ->attribute('class', 'form-control ' . $this->getElementClassString())
             ->attribute('placeholder', $this->getPlaceholder())
             ->addVariables([
                 'preview' => $this->picker->getPreview(get_called_class()),

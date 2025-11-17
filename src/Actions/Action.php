@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Actions;
+namespace Ladmin\Actions;
 
-use Casbin\Admin\Admin;
-use Casbin\Admin\Form\Field;
+use Ladmin\Admin;
+use Ladmin\Form\Field;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 
@@ -130,7 +130,7 @@ abstract class Action implements Renderable
     public function selector($prefix)
     {
         if (is_null($this->selector)) {
-            return static::makeSelector(get_called_class().spl_object_id($this), $prefix);
+            return static::makeSelector(get_called_class() . spl_object_id($this), $prefix);
         }
 
         return $this->selector;
@@ -145,7 +145,7 @@ abstract class Action implements Renderable
     public static function makeSelector($class, $prefix)
     {
         if (!isset(static::$selectors[$class])) {
-            static::$selectors[$class] = uniqid($prefix).mt_rand(1000, 9999);
+            static::$selectors[$class] = uniqid($prefix) . mt_rand(1000, 9999);
         }
 
         return static::$selectors[$class];
@@ -174,7 +174,7 @@ abstract class Action implements Renderable
         $html = [];
 
         foreach ($this->attributes as $name => $value) {
-            $html[] = $name.'="'.e($value).'"';
+            $html[] = $name . '="' . e($value) . '"';
         }
 
         return implode(' ', $html);
@@ -414,9 +414,7 @@ SCRIPT;
     /**
      * @return string
      */
-    public function html()
-    {
-    }
+    public function html() {}
 
     /**
      * @return mixed

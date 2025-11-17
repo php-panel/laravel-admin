@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Middleware;
+namespace Ladmin\Middleware;
 
-use Casbin\Admin\Auth\Database\OperationLog as OperationLogModel;
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Auth\Database\OperationLog as OperationLogModel;
+use Ladmin\Facades\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -94,8 +94,10 @@ class LogOperation
 
             $methods = array_map('strtoupper', $methods);
 
-            if ($request->is($except) &&
-                (empty($methods) || in_array($request->method(), $methods))) {
+            if (
+                $request->is($except) &&
+                (empty($methods) || in_array($request->method(), $methods))
+            ) {
                 return true;
             }
         }

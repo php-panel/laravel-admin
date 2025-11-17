@@ -1,9 +1,9 @@
 <?php
 
-namespace Casbin\Admin\Form\Field;
+namespace Ladmin\Form\Field;
 
-use Casbin\Admin\Facades\Admin;
-use Casbin\Admin\Form\Field;
+use Ladmin\Facades\Admin;
+use Ladmin\Form\Field;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
@@ -226,7 +226,8 @@ EOT;
      */
     public function model($model, $idField = 'id', $textField = 'name')
     {
-        if (!class_exists($model)
+        if (
+            !class_exists($model)
             || !in_array(Model::class, class_parents($model))
         ) {
             throw new \InvalidArgumentException("[$model] must be a valid model class");
@@ -267,7 +268,7 @@ EOT;
     protected function loadRemoteOptions($url, $parameters = [], $options = [])
     {
         $ajaxOptions = [
-            'url' => $url.'?'.http_build_query($parameters),
+            'url' => $url . '?' . http_build_query($parameters),
         ];
         $configs = array_merge([
             'allowClear'         => true,

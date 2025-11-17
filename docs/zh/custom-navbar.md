@@ -2,9 +2,9 @@
 
 从版本`1.5.6`开始，可以在顶部导航条上添加html元素了,  打开`app/Admin/bootstrap.php`：
 ```php
-use Casbin\Admin\Facades\Admin;
+use Ladmin\Facades\Admin;
 
-Admin::navbar(function (\Casbin\Admin\Widgets\Navbar $navbar) {
+Admin::navbar(function (\Ladmin\Widgets\Navbar $navbar) {
 
     $navbar->left('html...');
 

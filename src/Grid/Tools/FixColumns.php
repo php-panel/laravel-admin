@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Grid\Tools;
+namespace Ladmin\Grid\Tools;
 
-use Casbin\Admin\Grid;
+use Ladmin\Grid;
 use Illuminate\Support\Collection;
 
 class FixColumns

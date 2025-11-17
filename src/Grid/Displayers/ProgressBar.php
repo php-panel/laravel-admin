@@ -1,13 +1,13 @@
 <?php
 
-namespace Casbin\Admin\Grid\Displayers;
+namespace Ladmin\Grid\Displayers;
 
 class ProgressBar extends AbstractDisplayer
 {
     public function display($style = 'primary', $size = 'sm', $max = 100)
     {
         $style = collect((array) $style)->map(function ($style) {
-            return 'progress-bar-'.$style;
+            return 'progress-bar-' . $style;
         })->implode(' ');
 
         $this->value = (int) $this->value;

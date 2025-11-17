@@ -1,8 +1,8 @@
 <?php
 
-namespace Casbin\Admin\Form\Concerns;
+namespace Ladmin\Form\Concerns;
 
-use Casbin\Admin\Form\Field;
+use Ladmin\Form\Field;
 use Illuminate\Support\Arr;
 
 /**
