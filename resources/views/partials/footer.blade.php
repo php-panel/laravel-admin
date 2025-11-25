@@ -9,7 +9,7 @@
         &nbsp;&nbsp;&nbsp;&nbsp;
 
         @if(config('admin.show_version'))
-        <strong>Version</strong>&nbsp;&nbsp; {!! \Ladmin\Admin::VERSION !!}
+        <strong>Version</strong>&nbsp;&nbsp; {!! \Ladmin\Admin::getVersion() !!}
         @endif
 
     </div>

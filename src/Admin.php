@@ -3,6 +3,7 @@
 namespace Ladmin;
 
 use Closure;
+use Composer\InstalledVersions;
 use Ladmin\Auth\Database\Menu;
 use Ladmin\Controllers\AuthController;
 use Ladmin\Layout\Content;
@@ -25,7 +26,7 @@ class Admin
      *
      * @var string
      */
-    const VERSION = '1.8.17';
+    const PACKAGE_NAME = 'php-panel/laravel-admin';
 
     /**
      * @var Navbar
@@ -69,7 +70,17 @@ class Admin
      */
     public static function getLongVersion()
     {
-        return sprintf('Laravel-admin <comment>version</comment> <info>%s</info>', self::VERSION);
+        return sprintf('Laravel-admin <comment>version</comment> <info>%s</info>', self::getVersion());
+    }
+
+    /**
+     * Returns the version of Laravel-admin.
+     *
+     * @return string The application version
+     */
+    public static function getVersion()
+    {
+        return InstalledVersions::getPrettyVersion(self::PACKAGE_NAME) ?? '0.0.0-dev';
     }
 
     /**
