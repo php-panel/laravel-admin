@@ -89,12 +89,12 @@ class ResourceGenerator
         $output = '';
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->getName();
+            $name = $column['name'];
             if (in_array($name, $reservedColumns)) {
                 continue;
             }
-            $type = $column->getType()->getName();
-            $default = $column->getDefault();
+
+            ['type'=> $type, 'default' => $default] = $column;
 
             $defaultValue = '';
 
@@ -172,7 +172,7 @@ class ResourceGenerator
         $output = '';
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->getName();
+            $name = $column['name'];
 
             // set column label
             $label = $this->formatLabel($name);
@@ -190,7 +190,7 @@ class ResourceGenerator
         $output = '';
 
         foreach ($this->getTableColumns() as $column) {
-            $name = $column->getName();
+            $name = $column['name'];
             $label = $this->formatLabel($name);
 
             $output .= sprintf($this->formats['grid_column'], $name, $label);
@@ -215,35 +215,15 @@ class ResourceGenerator
      *
      * @throws \Exception
      *
-     * @return \Doctrine\DBAL\Schema\Column[]
+     * @return list<array{name: string, type: string, type_name: string, nullable: bool, default: mixed, auto_increment: bool, comment: string|null, generation: array{type: string, expression: string|null}|null}>
      */
     protected function getTableColumns()
     {
-        if (!$this->model->getConnection()->isDoctrineAvailable()) {
-            throw new \Exception(
-                'You need to require doctrine/dbal: ~2.3 in your own composer.json to get database columns. '
-            );
-        }
+        $schema = $this->model->getConnection()->getSchemaBuilder();
 
-        $table = $this->model->getConnection()->getTablePrefix() . $this->model->getTable();
-        /** @var \Doctrine\DBAL\Schema\MySqlSchemaManager $schema */
-        $schema = $this->model->getConnection()->getDoctrineSchemaManager($table);
+        $table = $this->model->getTable();
 
-        // custom mapping the types that doctrine/dbal does not support
-        $databasePlatform = $schema->getDatabasePlatform();
-
-        foreach ($this->doctrineTypeMapping as $doctrineType => $dbTypes) {
-            foreach ($dbTypes as $dbType) {
-                $databasePlatform->registerDoctrineTypeMapping($dbType, $doctrineType);
-            }
-        }
-
-        $database = null;
-        if (strpos($table, '.')) {
-            list($database, $table) = explode('.', $table);
-        }
-
-        return $schema->listTableColumns($table, $database);
+        return $schema->getColumns($table);
     }
 
     /**
