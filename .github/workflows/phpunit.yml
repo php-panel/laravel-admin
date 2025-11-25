@@ -29,6 +29,8 @@ jobs:
             laravel: 12.*
           - php: 8.4
             laravel: 12.*
+          - php: 8.5
+            laravel: 12.*
     name: Laravel${{ matrix.laravel }}-PHP${{ matrix.php }}
 
     steps:
