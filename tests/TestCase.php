@@ -1,9 +1,13 @@
 <?php
 
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Ladmin\AdminServiceProvider;
+use Ladmin\Facades\Admin;
 use Laravel\BrowserKitTesting\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
@@ -25,13 +29,13 @@ class TestCase extends BaseTestCase
         $app = require __DIR__ . '/../vendor/laravel/laravel/bootstrap/app.php';
 
         $app->booting(function () {
-            $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('Admin', \Ladmin\Facades\Admin::class);
+            $loader = AliasLoader::getInstance();
+            $loader->alias('Admin', Admin::class);
         });
 
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+        $app->make(Kernel::class)->bootstrap();
 
-        $app->register('Ladmin\AdminServiceProvider');
+        $app->register(AdminServiceProvider::class);
 
         return $app;
     }
