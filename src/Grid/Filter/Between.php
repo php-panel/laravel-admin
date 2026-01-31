@@ -11,6 +11,20 @@ class Between extends AbstractFilter
      * {@inheritdoc}
      */
     protected $view = 'admin::filter.between';
+    
+    /**
+     * 是否使用 MongoDB 模式
+     * 
+     * @var bool
+     */
+    protected $mongoMode = false;
+    
+    /**
+     * 是否转换日期格式为 UTCDateTime
+     * 
+     * @var bool
+     */
+    protected $convertDate = false;
 
     /**
      * Format id.
@@ -86,8 +100,41 @@ class Between extends AbstractFilter
         }
 
         $this->query = 'whereBetween';
+        // MongoDB 模式：需要将关联数组转为索引数组
+        if ($this->mongoMode) {
+            $startValue = $value['start'];
+            $endValue = $value['end'];
+            
+            // 如果启用日期转换，将字符串转为 UTCDateTime
+            if ($this->convertDate && class_exists('\MongoDB\BSON\UTCDateTime')) {
+                if (is_string($startValue)) {
+                    $startValue = new \MongoDB\BSON\UTCDateTime(strtotime($startValue) * 1000);
+                }
+                if (is_string($endValue)) {
+                    // 结束日期加上 23:59:59
+                    $endStr = strlen($endValue) === 10 ? $endValue . ' 23:59:59' : $endValue;
+                    $endValue = new \MongoDB\BSON\UTCDateTime(strtotime($endStr) * 1000);
+                }
+            }
+            
+            // MongoDB whereBetween 需要索引数组 [min, max]
+            return $this->buildCondition($this->column, [$startValue, $endValue]);
+        }
 
         return $this->buildCondition($this->column, $this->value);
+    }
+    
+    /**
+     * 启用 MongoDB 模式
+     * 
+     * @param bool $convertDate 是否转换日期为 UTCDateTime
+     * @return $this
+     */
+    public function mongo($convertDate = false)
+    {
+        $this->mongoMode = true;
+        $this->convertDate = $convertDate;
+        return $this;
     }
 
     /**
