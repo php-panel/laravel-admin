@@ -525,6 +525,25 @@ class Model
             return;
         }
 
+        // Validate sort direction, column identifier and cast type against
+        // allowlists before they reach raw order-by clauses below.
+        $this->sort['type'] = strtolower((string) $this->sort['type']) === 'desc' ? 'desc' : 'asc';
+
+        if (!preg_match('/^[A-Za-z0-9_]+(\.[A-Za-z0-9_]+)*$/', (string) $columnName)) {
+            return;
+        }
+
+        if (!empty($this->sort['cast'])) {
+            $allowedCasts = [
+                'char', 'date', 'datetime', 'decimal', 'signed',
+                'unsigned', 'binary', 'time', 'nchar', 'json',
+            ];
+            if (!in_array(strtolower((string) $this->sort['cast']), $allowedCasts, true)) {
+                return;
+            }
+            $this->sort['cast'] = strtoupper($this->sort['cast']);
+        }
+
         $columnNameContainsDots = Str::contains($columnName, '.');
         $isRelation = $this->queries->contains(function ($query) use ($columnName) {
             // relationship should be camel case
